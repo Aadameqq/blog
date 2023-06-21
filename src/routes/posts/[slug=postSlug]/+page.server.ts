@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types';
 import { posts } from '$lib/server/posts/posts';
+import { StatusCodes } from '$lib/server/shared/enums/StatusCodes';
 
 export const prerender = true;
 
@@ -28,9 +29,11 @@ export const entries: EntryGenerator = () => {
 export const load: PageServerLoad = async ({ params }) => {
 	const { slug } = params;
 
-	const { content, ...rest } = posts.find((post) => post.slug === slug);
+	const foundPost = posts.find((post) => post.slug === slug);
 
-	if (!rest) throw error(404);
+	if (!foundPost) throw error(StatusCodes.NOT_FOUND);
+
+	const { content, ...rest } = foundPost;
 
 	return { post: rest };
 };

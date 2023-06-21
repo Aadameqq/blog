@@ -6,6 +6,7 @@ import { filteringByCategorySlugPostsRefiner } from '$lib/server/posts/refiners/
 import { sortingByDatePostsRefiner } from '$lib/server/posts/refiners/sortingByDatePostsRefiner';
 import { mapPostsSetToGetPostsOverviewDto } from '$lib/server/posts/mappers/mapPostsSetToGetPostsOverviewDto';
 import { DEFAULT_PAGE, DEFAULT_PER_PAGE } from '$lib/server/posts/consts/pagination';
+import { StatusCodes } from '$lib/server/shared/enums/StatusCodes';
 
 export const GET: RequestHandler = ({ url }) => {
 	const page = Number(url.searchParams.get('page') || DEFAULT_PAGE);
@@ -13,7 +14,7 @@ export const GET: RequestHandler = ({ url }) => {
 
 	if (isNaN(page) || page < 1)
 		throw error(
-			400,
+			StatusCodes.BAD_REQUEST,
 			JSON.stringify({
 				errorMessage: 'page and parameter must be number greater than 0'
 			})
