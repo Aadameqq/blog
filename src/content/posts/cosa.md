@@ -8,6 +8,11 @@ description: Ddsklfklsdfksdfsjdfkldsfjsjkdklkdskjf
 
 # Header 2
 
-```js
-const a = "test";
+```
+a := 0;
+fmt.PrintLn("aaa")
+
+if true == true{
+    //
+}
 ```

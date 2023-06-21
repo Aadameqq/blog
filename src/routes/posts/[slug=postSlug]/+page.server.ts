@@ -33,7 +33,5 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	if (!foundPost) throw error(StatusCodes.NOT_FOUND);
 
-	const { content, ...rest } = foundPost;
-
-	return { post: rest };
+	return { post: foundPost };
 };
