@@ -1,6 +1,6 @@
 import { describe, test } from 'vitest';
 import type { PostsSet } from '$lib/server/posts/types/PostsSet';
-import { filteringByCategoryPostsRefiner } from '$lib/server/posts/refiners/filteringByCategoryPostsRefiner';
+import { filteringByCategorySlugPostsRefiner } from '$lib/server/posts/refiners/filteringByCategorySlugPostsRefiner';
 
 describe('filteringByCategoryPostsRefiner', () => {
 	const testPostsSet = {
@@ -41,7 +41,7 @@ describe('filteringByCategoryPostsRefiner', () => {
 			}
 		];
 
-		expect(filteringByCategoryPostsRefiner(testCategory)(testPostsSet).posts).toEqual(
+		expect(filteringByCategorySlugPostsRefiner(testCategory)(testPostsSet).posts).toEqual(
 			expectedPosts
 		);
 	});
@@ -52,7 +52,7 @@ describe('filteringByCategoryPostsRefiner', () => {
 
 		const expectedCount = 3;
 
-		expect(filteringByCategoryPostsRefiner(testCategory)(testPostsSet).totalCount).toBe(
+		expect(filteringByCategorySlugPostsRefiner(testCategory)(testPostsSet).totalCount).toBe(
 			expectedCount
 		);
 	});

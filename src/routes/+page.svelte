@@ -12,9 +12,9 @@
 	$: query = createInfiniteQuery({
 		queryKey: ['posts', currentCategory],
 		queryFn: async ({ pageParam = 1 }) => {
-			console.log(`/posts?page=${pageParam}&category=${currentCategory}`);
+			console.log(`/posts?page=${pageParam}&category_slug=${currentCategory}`);
 			const fetchedPosts = await axiosInstance.get(
-				`/posts?page=${pageParam}&category=${currentCategory}`
+				`/posts?page=${pageParam}&category_slug=${currentCategory}`
 			);
 			totalPages = fetchedPosts.data.totalPages;
 			return fetchedPosts.data.posts;

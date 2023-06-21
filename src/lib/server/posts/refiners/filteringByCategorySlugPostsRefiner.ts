@@ -1,6 +1,6 @@
 import type { PostsRefiner } from '$lib/server/posts/types/PostsRefiner';
 
-export const filteringByCategoryPostsRefiner =
+export const filteringByCategorySlugPostsRefiner =
 	(categorySlug?: string): PostsRefiner =>
 	(data) => {
 		if (!categorySlug) return data;
