@@ -1,6 +1,6 @@
 import type { Post } from '$lib/server/posts/types/Post';
 import type { RawPost } from '$lib/server/posts/types/RawPost';
-import { getPostSlugFromPath } from '$lib/getPostSlugFromPath';
+import { getPostSlugFromPath } from '$lib/server/posts/getPostSlugFromPath';
 
 const rawPostsByPath: Record<string, RawPost> = import.meta.globEager('/src/content/posts/*.md');
 
