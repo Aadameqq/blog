@@ -5,31 +5,25 @@
 
 	export let data: PageData;
 
-	const POSTS_PER_PAGE = 1;
+	let currentCategory = '';
 
-	const calculatePagesNumberFromPostsCount = (count: number) => {
-		return Math.ceil(count / POSTS_PER_PAGE);
-	};
-
-	let category = '';
-
-	let totalPages = calculatePagesNumberFromPostsCount(data.postsSet.totalPostsCount);
+	let totalPages = data.postsSet.totalPages;
 
 	$: query = createInfiniteQuery({
-		queryKey: ['posts', category],
+		queryKey: ['posts', currentCategory],
 		queryFn: async ({ pageParam = 1 }) => {
-			console.log(`/posts?page=${pageParam}&category=${category}`);
+			console.log(`/posts?page=${pageParam}&category=${currentCategory}`);
 			const fetchedPosts = await axiosInstance.get(
-				`/posts?page=${pageParam}&per_page=${POSTS_PER_PAGE}&category=${category}`
+				`/posts?page=${pageParam}&category=${currentCategory}`
 			);
-			totalPages = calculatePagesNumberFromPostsCount(Number(fetchedPosts.data.totalPostsCount));
+			totalPages = fetchedPosts.data.totalPages;
 			return fetchedPosts.data.posts;
 		},
 		initialData: {
 			pageParams: [undefined],
 			pages: [data.postsSet.posts]
 		},
-		enabled: !!category,
+		enabled: !!currentCategory,
 		getNextPageParam: (lastPage, pages) => {
 			if (pages.length < totalPages) {
 				return pages.length + 1;
@@ -39,7 +33,7 @@
 	});
 
 	const changeCategory = (newCategory: string) => {
-		category = newCategory;
+		currentCategory = newCategory;
 	};
 </script>
 

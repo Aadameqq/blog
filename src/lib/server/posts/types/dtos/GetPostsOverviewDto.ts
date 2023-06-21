@@ -4,5 +4,5 @@ export type GetPostsOverviewDto = {
 		date: string;
 		slug: string;
 	}[];
-	totalPostsCount: number;
+	totalPages: number;
 };

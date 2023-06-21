@@ -6,11 +6,15 @@ import { mapPostsSetToGetPostsOverviewDto } from '$lib/server/posts/mappers/mapP
 import { categories } from '$lib/server/categories/categories';
 import type { GetHomepageContentDto } from '$lib/server/blog/types/dtos/GetHomepageContentDto';
 import type { PageServerLoad } from './$types';
+import { DEFAULT_PAGE, DEFAULT_PER_PAGE } from '$lib/server/posts/consts/pagination';
 
 export const prerender = true;
 
 export const load: PageServerLoad = async () => {
-	const postsSet = getAllPosts(sortingByDatePostsRefiner(), paginatingPostsRefiner());
+	const postsSet = getAllPosts(
+		sortingByDatePostsRefiner(),
+		paginatingPostsRefiner(DEFAULT_PAGE, DEFAULT_PER_PAGE)
+	);
 
 	const categoriesDto = mapCategoriesToGetCategoriesOverviewDto(categories);
 	const postsDto = mapPostsSetToGetPostsOverviewDto(postsSet);

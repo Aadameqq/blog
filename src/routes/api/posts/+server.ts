@@ -5,24 +5,24 @@ import { paginatingPostsRefiner } from '$lib/server/posts/refiners/paginatingPos
 import { filteringByCategoryPostsRefiner } from '$lib/server/posts/refiners/filteringByCategoryPostsRefiner';
 import { sortingByDatePostsRefiner } from '$lib/server/posts/refiners/sortingByDatePostsRefiner';
 import { mapPostsSetToGetPostsOverviewDto } from '$lib/server/posts/mappers/mapPostsSetToGetPostsOverviewDto';
+import { DEFAULT_PAGE, DEFAULT_PER_PAGE } from '$lib/server/posts/consts/pagination';
 
 export const GET: RequestHandler = ({ url }) => {
-	const page = Number(url.searchParams.get('page') || '1');
-	const perPage = Number(url.searchParams.get('per_page') || '10');
+	const page = Number(url.searchParams.get('page') || DEFAULT_PAGE);
 	const category = url.searchParams.get('category') || undefined;
 
-	if (isNaN(page) || page < 1 || isNaN(perPage) || perPage < 1)
+	if (isNaN(page) || page < 1)
 		throw error(
 			400,
 			JSON.stringify({
-				errorMessage: 'page and per_page parameters must be numbers greater than 0'
+				errorMessage: 'page and parameter must be number greater than 0'
 			})
 		);
 
 	const postsSet = getAllPosts(
 		sortingByDatePostsRefiner(),
 		filteringByCategoryPostsRefiner(category),
-		paginatingPostsRefiner(page, perPage)
+		paginatingPostsRefiner(page, DEFAULT_PER_PAGE)
 	);
 
 	const dto = mapPostsSetToGetPostsOverviewDto(postsSet);
