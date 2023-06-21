@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
+import type { EntryGenerator, PageServerLoad } from './$types';
+import { posts } from '$lib/server/posts/posts';
 
 export const prerender = true;
 
@@ -20,18 +21,16 @@ export const prerender = true;
 // 	if (!dateRegex.test(metadata['date'])) throw new Error(`${slug} post's date has invalid format`);
 // };
 
-export const load: PageLoad = async ({ params }) => {
+export const entries: EntryGenerator = () => {
+	return posts;
+};
+
+export const load: PageServerLoad = async ({ params }) => {
 	const { slug } = params;
 
-	const { metadata, default: content } = await import(`/src/content/posts/${slug}.md`);
+	const { content, ...rest } = posts.find((post) => post.slug === slug);
 
-	const foundPost = {
-		...metadata,
-		content,
-		slug
-	};
+	if (!rest) throw error(404);
 
-	if (!foundPost) throw error(404);
-
-	return { post: foundPost };
+	return { post: rest };
 };

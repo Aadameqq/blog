@@ -8,4 +8,5 @@
 	<title>{data.post.title}</title>
 </svelte:head>
 
-<svelte:component this={data.post.content} />
+<!--<svelte:component this={data.post.content} />-->
+<!---->
