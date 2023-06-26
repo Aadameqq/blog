@@ -5,8 +5,8 @@ import { paginatingPostsRefiner } from '$lib/server/posts/refiners/paginatingPos
 import { filteringByCategorySlugPostsRefiner } from '$lib/server/posts/refiners/filteringByCategorySlugPostsRefiner';
 import { sortingByDatePostsRefiner } from '$lib/server/posts/refiners/sortingByDatePostsRefiner';
 import { mapPostsSetToGetPostsOverviewDto } from '$lib/server/posts/mappers/mapPostsSetToGetPostsOverviewDto';
-import { DEFAULT_PER_PAGE } from '$lib/server/posts/consts/pagination';
 import { StatusCodes } from '$lib/server/shared/enums/StatusCodes';
+import { DEFAULT_PER_PAGE } from '$lib/server/posts/paginationConstants';
 
 export const GET: RequestHandler = ({ url }) => {
 	const page = Number(url.searchParams.get('page'));
