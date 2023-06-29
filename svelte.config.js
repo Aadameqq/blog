@@ -9,10 +9,13 @@ const config = {
 		adapter: adapter({
 			pages: 'dist',
 			assets: 'dist',
-			fallback: '404.html',
+			fallback: undefined,
 			precompress: false,
 			strict: true
-		})
+		}),
+		paths: {
+			base: process.env.NODE_ENV === 'production' ? process.env.BUILD_BASE_PATH : '/' // Todo: throw error if undefined
+		}
 	}
 };
 

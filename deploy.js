@@ -2,6 +2,8 @@ import { exec } from 'child_process';
 import { appendFile, rm } from 'fs/promises';
 import { publish } from 'gh-pages';
 
+const BASE_PATH = '/mybasepath';
+
 const execAsync = (command) => {
 	return new Promise((resolve, reject) => {
 		exec(command, (err) => {
@@ -18,7 +20,7 @@ const run = async () => {
 	} catch (err) {
 		if (err.code !== FILE_DOES_NOT_EXIST_ERROR_CODE) throw err;
 	}
-	await execAsync('npm run build');
+	await execAsync(`set BUILD_BASE_PATH=${BASE_PATH} && npm run build`);
 	await appendFile('./dist/.nojekyll', '');
 	await publish('dist');
 };
