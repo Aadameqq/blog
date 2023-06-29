@@ -1,17 +1,15 @@
-import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import sveltePreprocess from 'svelte-preprocess';
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.md'],
 	preprocess: [vitePreprocess(), sveltePreprocess()],
-
 	kit: {
 		adapter: adapter({
 			pages: 'dist',
 			assets: 'dist',
-			fallback: undefined,
+			fallback: '404.html',
 			precompress: false,
 			strict: true
 		})

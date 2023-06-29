@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { getPostSlugFromPath } from '$lib/server/posts/getPostSlugFromPath';
+import { getPostSlugFromPath } from '$lib/server/posts/postSlugUtils';
 
 describe('getPostSlugFromPath', () => {
 	test.each([

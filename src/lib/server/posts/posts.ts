@@ -1,8 +1,15 @@
 import type { Post } from '$lib/server/posts/types/Post';
-import { getPostSlugFromPath } from '$lib/server/posts/getPostSlugFromPath';
 import formatMdxFile from 'gray-matter';
 import type { RawPostMetadata } from '$lib/server/posts/types/RawPostMetadata';
 import { markdownItInstance } from '$lib/server/shared/markdownItInstance';
+import { getPostSlugFromPath } from '$lib/server/posts/postSlugUtils';
+
+const validateRawPostMetadata = (metadata: RawPostMetadata[]) => {
+	// const  = [
+	// 	{key:,optionalValidator}
+	// ];
+	//
+};
 
 const postFilesByPath: Record<string, string> = import.meta.glob('/src/content/posts/*.md', {
 	as: 'raw',
