@@ -10,7 +10,7 @@ import {
 } from '$lib/server/posts/pagination';
 import { getDtoInstance } from '$lib/server/posts/dto';
 
-export const prerender = 'true';
+export const prerender = true;
 
 export const entries: EntryGenerator = () => {
 	const routes = [];
@@ -33,7 +33,7 @@ export const entries: EntryGenerator = () => {
 };
 
 export const load: PageServerLoad = ({ params }) => {
-	console.log(1, params.route);
+	console.log(params);
 	const { route } = params;
 
 	const pageParam = getParamValueFromRouteIfExists(route, 'pages');

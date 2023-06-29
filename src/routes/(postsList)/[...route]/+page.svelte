@@ -26,14 +26,14 @@
 <br />
 <br />
 
-{#if doesPreviousPageExist}
-	<a
-		href="{base}{data.currentCategory
-			? `/categories/${data.currentCategory}`
-			: ''}{data.currentPage === 2 ? `` : `/pages/${data.currentPage - 1}`}">Previous</a
-	>
-{/if}
-<span>{data.currentPage}</span>
+<!--{#if doesPreviousPageExist}-->
+<!--	<a-->
+<!--		href="{base}{data.currentCategory-->
+<!--			? `/categories/${data.currentCategory}`-->
+<!--			: ''}{data.currentPage === 2 ? `` : `/pages/${data.currentPage - 1}`}">Previous</a-->
+<!--	>-->
+<!--{/if}-->
+<!--<span>{data.currentPage}</span>-->
 
 {#if doesNextPageExist}
 	<a
