@@ -1,1 +1,0 @@
-{"type":"data","nodes":[null,{"type":"data","data":[{"categories":1},[2,4],{"name":3,"slug":3},"test",{"name":5,"slug":5},"test2"],"uses":{}},{"type":"data","data":[{"posts":1,"totalPages":6,"currentPage":7,"currentCategory":-1},[2],{"title":3,"date":4,"slug":5},"Test2","12.01.2077","cosa",2,1],"uses":{"params":["route"]}}]}
