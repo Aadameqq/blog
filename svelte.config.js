@@ -14,7 +14,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? process.env.BUILD_BASE_PATH : '' // Todo: throw error if undefined
+			base: '/blog'
 		},
 		prerender: {
 			entries: ['/']
