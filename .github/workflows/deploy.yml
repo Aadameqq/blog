@@ -1,5 +1,9 @@
 name: Deploy to GitHub Pages
 
+concurrency:
+  group: ${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
 on:
   push:
     branches: ['master']
@@ -7,6 +11,7 @@ on:
 jobs:
   build_site:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -29,12 +34,12 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          # this should match the `pages` option in your adapter-static options
           path: 'dist/'
 
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
+    timeout-minutes: 3
 
     permissions:
       pages: write
