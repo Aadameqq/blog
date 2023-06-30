@@ -8,7 +8,7 @@ import {
 	formatPostsPage,
 	paginatePosts
 } from '$lib/server/posts/pagination';
-import { getDtoInstance } from '$lib/server/posts/dto';
+import { getFilteredPostPreviewsDtoInstance } from '$lib/server/posts/dto';
 
 export const prerender = true;
 
@@ -52,5 +52,5 @@ export const load: PageServerLoad = ({ params }) => {
 	filteredPosts = sortPostsFromNewest(filteredPosts);
 	filteredPosts = paginatePosts(filteredPosts, page);
 
-	return getDtoInstance(filteredPosts, totalCount, page, categorySlugParam);
+	return getFilteredPostPreviewsDtoInstance(filteredPosts, totalCount, page, categorySlugParam);
 };

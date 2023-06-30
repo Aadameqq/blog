@@ -5,10 +5,9 @@ import { markdownItInstance } from '$lib/server/shared/markdownItInstance';
 import { getPostSlugFromPath } from '$lib/server/posts/postSlugUtils';
 
 const validateRawPostMetadata = (metadata: RawPostMetadata[]) => {
-	// const  = [
-	// 	{key:,optionalValidator}
-	// ];
-	//
+	const requiredKeys = [];
+
+	// for(let i = 0)
 };
 
 const postFilesByPath: Record<string, string> = import.meta.glob('/src/content/posts/*.md', {

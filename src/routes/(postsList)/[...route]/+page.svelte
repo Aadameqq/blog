@@ -9,11 +9,11 @@
 		restore: (scrollY: number) => window.scrollTo(0, scrollY)
 	};
 
-	$: doesPreviousPageExist = data.currentPage > 1;
-	$: doesNextPageExist = data.currentPage < data.totalPages;
+	$: doesPreviousPageExist = data.filters.pagination.page > 1;
+	$: doesNextPageExist = data.filters.pagination.page < data.filters.pagination.totalPages;
 </script>
 
-<a href={base}>All</a>
+<a href={base || `/`}>All</a>
 {#each data.categories as category}
 	<a href="{base}/categories/{category.slug}">{category.name}</a>
 {/each}
@@ -26,19 +26,20 @@
 <br />
 <br />
 
-<!--{#if doesPreviousPageExist}-->
-<!--	<a-->
-<!--		href="{base}{data.currentCategory-->
-<!--			? `/categories/${data.currentCategory}`-->
-<!--			: ''}{data.currentPage === 2 ? `` : `/pages/${data.currentPage - 1}`}">Previous</a-->
-<!--	>-->
-<!--{/if}-->
-<!--<span>{data.currentPage}</span>-->
+{#if doesPreviousPageExist}
+	<a
+		href="{base}{data.filters.category ? `/categories/${data.filters.category}` : ''}{data.filters
+			.pagination.page === 2
+			? ``
+			: `/pages/${data.filters.pagination.page - 1}`}">Previous</a
+	>
+{/if} // TODO: fix when both are undefined and base is undefined should be "/" instead of ""
+<span>{data.filters.pagination.page}</span>
 
 {#if doesNextPageExist}
 	<a
-		href={`${base}${data.currentCategory ? `/categories/${data.currentCategory}` : ''}/pages/${
-			data.currentPage + 1
+		href={`${base}${data.filters.category ? `/categories/${data.filters.category}` : ''}/pages/${
+			data.filters.pagination.page + 1
 		}`}>Next</a
 	>
 {/if}

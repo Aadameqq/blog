@@ -1,16 +1,20 @@
 import type { Post } from '$lib/server/posts/types/Post';
 import { calculatePagesFromPostsCount } from '$lib/server/posts/pagination';
 
-export const getDtoInstance = (
+export const getFilteredPostPreviewsDtoInstance = (
 	posts: Post[],
 	totalCount: number,
-	currentPage: number,
-	currentCategory?: string
+	pageFilter: number,
+	categoryFilter?: string
 ) => {
 	return {
 		posts: posts.map(({ title, date, slug }) => ({ title, date, slug })),
-		totalPages: calculatePagesFromPostsCount(totalCount),
-		currentPage,
-		currentCategory
+		filters: {
+			pagination: {
+				page: pageFilter,
+				totalPages: calculatePagesFromPostsCount(totalCount)
+			},
+			category: categoryFilter
+		}
 	};
 };
