@@ -8,7 +8,7 @@ const surroundWithHighlightHtmlTag = (hljsResult: HighlightResult) => {
 
 const fallbackLanguagesSubset = ['ts', 'js', 'tsx', 'jsx', 'cpp', 'go', 'html', 'css', 'scss'];
 
-export const markdownItInstance = md({
+const mdItInstance = md({
 	highlight: (code, language) => {
 		let codeAsHtml;
 		if (!language || !highlighter.getLanguage(language)) {
@@ -21,3 +21,7 @@ export const markdownItInstance = md({
 		return surroundWithHighlightHtmlTag(codeAsHtml);
 	}
 });
+
+export const convertMdToHtml = (md: string) => {
+	return mdItInstance.render(md);
+};

@@ -1,14 +1,10 @@
 import type { Post } from '$lib/server/posts/types/Post';
-import formatMdxFile from 'gray-matter';
 import type { RawPostMetadata } from '$lib/server/posts/types/RawPostMetadata';
-import { markdownItInstance } from '$lib/server/shared/markdownItInstance';
 import { getPostSlugFromPath } from '$lib/server/posts/postSlugUtils';
-
-const validateRawPostMetadata = (metadata: RawPostMetadata[]) => {
-	const requiredKeys = [];
-
-	// for(let i = 0)
-};
+import { validatePostAndThrowErrors } from '$lib/server/posts/postValidation';
+import { convertMdxToObject } from '$lib/server/shared/facades/mdxToObjectConverter';
+import { convertMdToHtml } from '$lib/server/shared/facades/mdToHtmlConverter';
+import { categories } from '$lib/server/categories/categories';
 
 const postFilesByPath: Record<string, string> = import.meta.glob('/src/content/posts/*.md', {
 	as: 'raw',
@@ -18,13 +14,18 @@ const postFilesByPath: Record<string, string> = import.meta.glob('/src/content/p
 export const posts: Post[] = Object.entries(postFilesByPath).map(([path, fileContent]) => {
 	const slug = getPostSlugFromPath(path);
 
-	const { data: rawMetadata, content: rawContent } = formatMdxFile(fileContent);
+	const { metadata: rawMetadata, content: rawContent } =
+		convertMdxToObject<RawPostMetadata>(fileContent);
 
-	const content = markdownItInstance.render(rawContent);
+	const content = convertMdToHtml(rawContent);
 
-	return {
-		...(rawMetadata as RawPostMetadata),
+	const post = {
+		...rawMetadata,
 		slug,
 		content: content
 	};
+
+	validatePostAndThrowErrors(post, categories);
+
+	return post;
 });

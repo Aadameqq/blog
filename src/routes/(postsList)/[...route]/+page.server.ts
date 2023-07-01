@@ -33,7 +33,6 @@ export const entries: EntryGenerator = () => {
 };
 
 export const load: PageServerLoad = ({ params }) => {
-	console.log(params);
 	const { route } = params;
 
 	const pageParam = getParamValueFromRouteIfExists(route, 'pages');
