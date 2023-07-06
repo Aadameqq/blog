@@ -42,6 +42,7 @@
 	"type": "module",
 	"dependencies": {
 		"bootstrap-icons": "^1.10.5",
+		"cssnano": "^6.0.1",
 		"joi": "^17.9.2"
 	}
 }
