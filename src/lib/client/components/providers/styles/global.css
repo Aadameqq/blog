@@ -1,0 +1,31 @@
+@import 'highlight.js/styles/androidstudio.css';
+@import './markdown.css';
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "Space Mono";
+    src: url("/fonts/spaceMono/SpaceMono-Regular.ttf");
+}
+@font-face {
+    font-family: "Space Mono";
+    src: url("/fonts/spaceMono/SpaceMono-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Fira Code";
+    src: url("/fonts/firaCode/FiraCode-Regular.ttf");
+}
+
+
+*{
+    font-family: "Space Mono";
+}
+
+body{
+    background: #171717;
+}
