@@ -5,13 +5,25 @@
 <address>
 	<ol class="flex items-center">
 		<li>
-			<Link><i class="icon bi bi-github" aria-label="Github"><!----></i></Link>
+			<Link
+				><span class="visually-hidden">My Github profile </span><span class="icon bi bi-github"
+					><!----></span
+				></Link
+			>
 		</li>
 		<li>
-			<Link><i class="icon bi bi-facebook" aria-label="Facebook"><!----></i></Link>
+			<Link
+				><span class="visually-hidden">My Facebook profile </span><span class="icon bi bi-facebook"
+					><!----></span
+				>
+			</Link>
 		</li>
 		<li>
-			<Link><i class="icon bi bi-linkedin" aria-label="LinkedIn"><!----></i></Link>
+			<Link
+				><span class="visually-hidden">My LinkedIn profile </span><span class="icon bi bi-linkedin"
+					><!----></span
+				>
+			</Link>
 		</li>
 	</ol>
 </address>

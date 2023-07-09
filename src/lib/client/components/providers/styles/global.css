@@ -6,24 +6,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .visually-hidden {
+        border: 0;
+        padding: 0;
+        height: 1px;
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        clip: rect(0 0 0 0);
+        width: 1px;
+    }
+}
 
-@font-face {
-    font-family: "Space Mono";
-    src: url("/fonts/spaceMono/SpaceMono-Regular.ttf");
-}
-@font-face {
-    font-family: "Space Mono";
-    src: url("/fonts/spaceMono/SpaceMono-Bold.ttf");
-    font-weight: bold;
-}
 @font-face {
     font-family: "Fira Code";
     src: url("/fonts/firaCode/FiraCode-Regular.ttf");
 }
+@font-face {
+    font-family: "Noto Sans";
+    src: url("/fonts/firaCode/NotoSans-Bold.ttf");
+    font-weight: bold;
+}
+
 
 
 *{
-    font-family: "Space Mono";
+    font-family: "Fira Code",monospace;
 }
 
 body{
