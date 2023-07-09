@@ -17,7 +17,7 @@ const config = {
 			base: process.env.BASE_PATH
 		},
 		prerender: {
-			entries: ['/']
+			entries: ['/', '/404']
 		}
 	}
 };
