@@ -1,4 +1,5 @@
 <span class="parent"><slot /></span>
+// TODO: max width bigger margin on top for headers
 
 <style lang="postcss">
 	.parent :global(p) {
@@ -17,6 +18,10 @@
 		@apply my-3 p-2 desktop:px-4 rounded-md bg-code;
 	}
 
+	.parent :global(pre code *) {
+		@apply font-code;
+	}
+
 	.parent :global(pre code::-webkit-scrollbar) {
 		@apply h-[10px] bg-code;
 	}
@@ -26,7 +31,7 @@
 	}
 
 	.parent :global(code:not(pre code)) {
-		@apply rounded-md p-1 font-code bg-[#282b2e];
+		@apply rounded-md p-1 font-code bg-code;
 	}
 
 	.parent :global(h2) {
