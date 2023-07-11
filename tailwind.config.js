@@ -6,7 +6,15 @@ export default {
 			desktop: '768px'
 		},
 		fontFamily: {
-			numbers: ['Noto Sans', 'sans-serif']
+			numbers: ['Noto Sans', 'sans-serif'],
+			code: ['Fira Code', 'monospace']
+		},
+		extend: {
+			colors: {
+				bg: '#171717',
+				scrollbar: '#181818',
+				code: '#282b2e'
+			}
 		}
 	},
 	plugins: []
