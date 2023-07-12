@@ -3,7 +3,8 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		screens: {
-			desktop: '768px'
+			laptop: '768px',
+			desktop: '1500px'
 		},
 		fontFamily: {
 			numbers: ['Noto Sans', 'sans-serif'],

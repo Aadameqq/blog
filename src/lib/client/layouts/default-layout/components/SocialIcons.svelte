@@ -30,6 +30,6 @@
 
 <style lang="postcss">
 	.icon {
-		@apply text-gray-300 pl-3 pr-3 text-2xl;
+		@apply text-gray-300 pl-3 pr-3 text-2xl desktop:text-3xl;
 	}
 </style>

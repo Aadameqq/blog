@@ -6,12 +6,12 @@
 </script>
 
 <header
-	class="flex desktop:justify-between w-full pt-4 desktop:pt-9 pb-4 desktop:pb-9 desktop:items-center flex-col desktop:flex-row justify-center"
+	class="flex laptop:justify-between w-full pt-4 laptop:pt-9 pb-4 laptop:pb-9 laptop:items-center flex-col laptop:flex-row justify-center"
 >
-	<span class="flex justify-between w-full desktop:w-auto">
-		<h2 class="text-2xl font-bold text-gray-200">Adam Bryndza</h2>
+	<span class="flex justify-between w-full laptop:w-auto">
+		<h2 class="text-2xl font-bold text-gray-200 desktop:text-3xl">Adam Bryndza</h2>
 		<button
-			class="desktop:hidden"
+			class="laptop:hidden"
 			on:click={() => (isMenuOpen = !isMenuOpen)}
 			aria-expanded={isMenuOpen}
 		>
@@ -21,9 +21,9 @@
 			>
 		</button>
 	</span>
-	<div class="items-center desktop:flex {!isMenuOpen ? 'hidden' : 'h-screen'}">
+	<div class="items-center laptop:flex {!isMenuOpen ? 'hidden' : 'h-screen'}">
 		<nav>
-			<ol class="flex items-center text-gray-300 text-lg">
+			<ol class="flex items-center text-gray-300 text-lg desktop:text-xl">
 				<li>
 					<Link>Home</Link>
 				</li>

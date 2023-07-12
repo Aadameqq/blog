@@ -31,17 +31,19 @@
 </svelte:head>
 
 <DefaultLayout>
-	<main class="mt-20">
+	<main>
 		<article>
 			<header>
-				<h1 class="text-gray-100 text-2xl desktop:text-3xl font-bold mb-3">{post.title}</h1>
-				<div class="text-gray-400 mb-2">
+				<h1 class="text-gray-100 text-2xl laptop:text-3xl font-bold mb-3 desktop:text-4xl">
+					{post.title}
+				</h1>
+				<div class="text-gray-400 mb-2 desktop:text-lg">
 					<span class="bi bi-bookmark-fill text-gray-300" aria-hidden="true"><!-- --></span>
 					<span class="visually-hidden">Post's category: </span>
 					<span>{post.category}</span>
 					<!-- TODO: we should not show category slug -->
 				</div>
-				<div class="text-gray-400 mb-6">
+				<div class="text-gray-400 mb-6 desktop:text-lg">
 					<span class="bi bi-clock-fill text-gray-300" aria-hidden="true"><!-- --></span>
 					<span class="visually-hidden">Post created at: </span>
 					<time datetime={post.date}>{formatDate(post.date)}</time>

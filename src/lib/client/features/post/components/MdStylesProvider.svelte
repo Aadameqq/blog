@@ -1,21 +1,24 @@
 <span class="parent"><slot /></span>
-// TODO: max width bigger margin on top for headers
 
 <style lang="postcss">
 	.parent :global(p) {
-		@apply text-gray-300;
+		@apply text-gray-300 desktop:text-lg;
 	}
 
 	.parent :global(ol) {
-		@apply text-gray-300 list-decimal list-inside my-2;
+		@apply text-gray-300 list-decimal list-inside my-2 desktop:text-lg;
 	}
 
 	.parent :global(ul) {
-		@apply text-gray-300 list-disc list-inside my-2;
+		@apply text-gray-300 list-disc list-inside my-2 desktop:text-lg;
 	}
 
 	.parent :global(pre) {
-		@apply my-3 p-2 desktop:px-4 rounded-md bg-code;
+		@apply my-3 p-2 laptop:px-4 rounded-md bg-code desktop:text-lg;
+	}
+
+	.parent :global(pre code) {
+		@apply bg-code;
 	}
 
 	.parent :global(pre code *) {
@@ -35,11 +38,11 @@
 	}
 
 	.parent :global(h2) {
-		@apply text-xl desktop:text-2xl text-gray-100 font-bold pt-4 pb-4;
+		@apply text-xl laptop:text-2xl text-gray-100 font-bold pt-10 pb-3 desktop:text-3xl;
 	}
 
 	.parent :global(h3) {
-		@apply text-lg desktop:text-xl text-gray-200 font-bold pt-3 pb-3;
+		@apply text-lg laptop:text-xl text-gray-200 font-bold pt-8 pb-3 desktop:text-2xl;
 	}
 
 	.parent :global(strong) {

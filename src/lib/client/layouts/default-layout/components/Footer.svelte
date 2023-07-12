@@ -3,16 +3,20 @@
 </script>
 
 <footer
-	class="flex justify-center flex-col desktop:flex-row desktop:justify-between items-center pt-5 pb-5 gap-5"
+	class="w-full flex justify-center flex-col laptop:flex-row laptop:justify-between items-center pt-5 pb-5 gap-5"
 >
-	<div class="text-sm text-center desktop:text-left order-2 desktop:order-none">
+	<div
+		class="text-sm text-center laptop:text-left order-2 laptop:order-none desktop:text-base basis-1/3"
+	>
 		<h6 class="header">Copyright</h6>
 		<p class="content">Adam Bryndza</p>
 	</div>
-	<span class="order-3 desktop:order-none">
+	<span class="order-3 laptop:order-none basis-1/3 flex justify-center">
 		<SocialIcons />
 	</span>
-	<address class="not-italic text-center desktop:text-right text-sm order-1 desktop:order-none">
+	<address
+		class="not-italic text-center laptop:text-right text-sm order-1 laptop:order-none desktop:text-base basis-1/3"
+	>
 		<h6 class="header">Mail</h6>
 		<p class="content">testmail@testdomain</p>
 	</address>
