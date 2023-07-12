@@ -34,5 +34,13 @@
 }
 
 body{
-    background: #171717;
+    @apply bg-bg;
+}
+
+::-moz-selection {
+    @apply text-gray-900 bg-gray-200
+}
+
+::selection {
+    @apply text-gray-900 bg-gray-200
 }
