@@ -9,7 +9,7 @@ const config = {
 		adapter: adapter({
 			pages: 'dist',
 			assets: 'dist',
-			fallback: undefined,
+			fallback: '404.html',
 			precompress: false,
 			strict: true
 		}),
@@ -17,7 +17,7 @@ const config = {
 			base: process.env.BASE_PATH
 		},
 		prerender: {
-			entries: ['/', '/404a']
+			entries: ['/', '/404']
 		}
 	}
 };
