@@ -26,7 +26,11 @@ Phasellus sed ante dolor. Donec lobortis arcu sed ipsum condimentum, quis hendre
 - test
 - test2 
 
-Pellentesque venenatis ultricies faucibus. Aenean eu elit purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut eget porta nisl. Proin justo justo, cursus quis lobortis ac, aliquam id quam. In convallis eros ipsum, ac volutpat mi elementum quis. Ut commodo urna metus, vitae faucibus velit dapibus in.
+Pellentesque venenatis ultricies faucibus. Aenean eu elit purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+![some photo](/images/img.png)
+*Image from nowhere*
+***test***
+Ut eget porta nisl. Proin justo justo, cursus quis lobortis ac, aliquam id quam. In convallis eros ipsum, ac volutpat mi elementum quis. Ut commodo urna metus, vitae faucibus velit dapibus in.
 
 ## Sth something
 
@@ -34,12 +38,18 @@ Some text that does not make `sense`.
 
 > And then,  
 Nothing,  
-Nothing happened  
- -- Someone known
+Nothing happened - *Someone known*
 
 Sed iaculis sagittis lacus, "accumsan" faucibus risus. 
 ```js
 const hello = 1;
 ```
 
-Integer porttitor tortor non neque ultrices, sed tincidunt orci luctus. Pellentesque porta tincidunt nulla, a tempor nunc ultrices pharetra. Aliquam dapibus tincidunt ante sed luctus. Pellentesque sit amet porttitor metus, id semper enim. Integer ullamcorper, dolor ac aliquam dignissim, ligula tellus condimentum orci, at imperdiet nisi metus sit amet odio. Pellentesque metus lacus, auctor sed eleifend tincidunt, bibendum in magna. Nullam est lacus, pellentesque auctor rutrum in, pulvinar at purus. Nunc sodales arcu a diam blandit, id tempus ligula vehicula. Sed id ex sed metus ornare fringilla nec vel arcu. In vel ipsum facilisis, sodales quam sed, fermentum felis. Duis et dignissim ex. Morbi in sem tincidunt, lacinia massa quis, accumsan sapien.
+Integer porttitor tortor non neque ultrices, sed tincidunt orci luctus. 
+
+<figure>
+    <img src="/images/img.png" alt="Not important code fragment"/>
+    <figcaption>Inspired by no-one</figcaption>
+</figure>
+
+Pellentesque porta tincidunt nulla, a tempor nunc ultrices pharetra. Aliquam dapibus tincidunt ante sed luctus. Pellentesque sit amet porttitor metus, id semper enim. Integer ullamcorper, dolor ac aliquam dignissim, ligula tellus condimentum orci, at imperdiet nisi metus sit amet odio. Pellentesque metus lacus, auctor sed eleifend tincidunt, bibendum in magna. Nullam est lacus, pellentesque auctor rutrum in, pulvinar at purus. Nunc sodales arcu a diam blandit, id tempus ligula vehicula. Sed id ex sed metus ornare fringilla nec vel arcu. In vel ipsum facilisis, sodales quam sed, fermentum felis. Duis et dignissim ex. Morbi in sem tincidunt, lacinia massa quis, accumsan sapien.

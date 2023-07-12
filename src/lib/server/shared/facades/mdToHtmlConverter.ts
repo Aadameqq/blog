@@ -9,6 +9,7 @@ const surroundWithHighlightHtmlTag = (hljsResult: HighlightResult) => {
 const fallbackLanguagesSubset = ['ts', 'js', 'tsx', 'jsx', 'cpp', 'go', 'html', 'css', 'scss'];
 
 const mdItInstance = md({
+	html: true,
 	highlight: (code, language) => {
 		let codeAsHtml;
 		if (!language || !highlighter.getLanguage(language)) {

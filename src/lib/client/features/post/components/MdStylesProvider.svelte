@@ -56,4 +56,24 @@
 	.parent :global(a) {
 		@apply underline underline-offset-2 text-blue-400;
 	}
+
+	.parent :global(img) {
+		@apply w-full rounded-md my-2;
+	}
+
+	.parent :global(figure img) {
+		@apply mb-0;
+	}
+
+	.parent :global(figure figcaption) {
+		@apply text-sm mb-2 desktop:text-base text-gray-400;
+	}
+
+	.parent :global(em) {
+		@apply text-gray-100 font-bold not-italic;
+	}
+
+	.parent :global(em strong) {
+		@apply font-bold;
+	}
 </style>
