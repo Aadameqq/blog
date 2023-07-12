@@ -17,9 +17,8 @@ const addBasePathToImgs = (basePath: string) => (md: Md) => {
 
 		const srcIndex = token.attrIndex('src');
 
-		let src = '';
 		if (token.attrs && srcIndex !== undefined) {
-			src = token.attrs[srcIndex][1];
+			const src = token.attrs[srcIndex][1];
 			token.attrs[srcIndex][1] = basePath + src;
 		}
 
