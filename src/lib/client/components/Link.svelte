@@ -2,11 +2,9 @@
 	import { base } from '$app/paths';
 
 	export let url;
-
-	export let ariaLabel: string | undefined = undefined;
 </script>
 
-<a href="{base}{url || '/'}" aria-label={ariaLabel}>
+<a href="{base}{url || '/'}" {...$$restProps}>
 	<slot />
 </a>
 

@@ -1,29 +1,9 @@
 <script lang="ts">
 	import DefaultLayout from '$lib/client/layouts/default-layout/DefaultLayout.svelte';
-	import MdStylesProvider from '$lib/client/features/post/components/MdStylesProvider.svelte';
+	import MdStylesProvider from '$lib/client/features/posts/features/single/components/MdStylesProvider.svelte';
+	import { formatDate } from '$lib/client/features/posts/services/dateFormatter';
 
 	export let post;
-
-	const monthNames = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December'
-	];
-
-	const formatDate = (strDate: string) => {
-		const [day, month, year] = strDate.split('.');
-
-		return `${monthNames[month - 1]} ${day}, ${year}`;
-	};
 </script>
 
 <svelte:head>
