@@ -9,8 +9,9 @@ const surroundWithHighlightHtmlTag = (hljsResult: HighlightResult) => {
 
 const fallbackLanguagesSubset = ['ts', 'js', 'tsx', 'jsx', 'cpp', 'go', 'html', 'css', 'scss'];
 
-const addBasePathToImgs = (basePath: string) => (md: Md) => {
+const imagesBasePathPlugin = (basePath: string) => (md: Md) => {
 	const defaultImageRenderer = md.renderer.rules.image;
+	const defaultHtmlRendeder = md.renderer.rules.image;
 
 	md.renderer.rules.image = (tokens, idx, options, env, self) => {
 		const token = tokens[idx];
@@ -24,6 +25,17 @@ const addBasePathToImgs = (basePath: string) => (md: Md) => {
 
 		return defaultImageRenderer ? defaultImageRenderer(tokens, idx, options, env, self) : '';
 	};
+
+	// md.renderer.rules.html_block = (tokens, idx, options, env, self) => {
+	// 	const { content } = tokens[idx];
+	// 	const imageSrcRegex = /src="(.*)"/gm;
+	//
+	// 	tokens[idx].content = content.replaceAll(imageSrcRegex, `src="```"`)
+	//
+	//
+	//
+	// 	return defaultHtmlRendeder ? defaultHtmlRendeder(tokens, idx, options, env, self) : '';
+	// };
 };
 
 const mdItInstance = Md({
@@ -39,7 +51,7 @@ const mdItInstance = Md({
 
 		return surroundWithHighlightHtmlTag(codeAsHtml);
 	}
-}).use(addBasePathToImgs(base));
+}).use(imagesBasePathPlugin(base));
 
 export const convertMdToHtml = (md: string) => {
 	return mdItInstance.render(md);
