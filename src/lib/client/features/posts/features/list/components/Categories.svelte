@@ -11,6 +11,9 @@
 <nav>
 	<span class="visually-hidden">Categories: </span>
 	<ul>
+		<li>
+			<Link url={generateUrl()} aria-current={!currentCategorySlug ? 'page' : undefined}>All</Link>
+		</li>
 		{#each categories as category (category.slug)}
 			<li>
 				<Link
