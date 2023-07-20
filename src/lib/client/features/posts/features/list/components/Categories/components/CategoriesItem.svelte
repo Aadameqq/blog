@@ -1,0 +1,16 @@
+<script lang="ts">
+	import Link from '$lib/client/components/Link.svelte';
+
+	export let url;
+	export let isCurrent: boolean;
+</script>
+
+<li class="mx-2 first:ml-0 last:mr-0">
+	<Link
+		{url}
+		aria-current={isCurrent && 'page'}
+		class="text-gray-300 bg-zinc-800 px-3 py-1.5 rounded-lg border-2 border-solid border-zinc-600 aria-current:bg-gray-200 aria-current:text-gray-900 aria-current:border-gray-200 aria-current:font-bold"
+	>
+		<slot />
+	</Link>
+</li>

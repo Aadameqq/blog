@@ -5,10 +5,7 @@ type UrlParams =
 	  }
 	| undefined;
 
-const DEFAULT_URL = '/';
-
-// TODO: move base path
-export const urlGenerator = (basePath: string, initialParams: UrlParams) => (params: UrlParams) => {
+export const urlGenerator = (initialParams: UrlParams) => (params: UrlParams) => {
 	const { categorySlug, page } = {
 		...initialParams,
 		...params
@@ -21,5 +18,5 @@ export const urlGenerator = (basePath: string, initialParams: UrlParams) => (par
 	if (page) {
 		url += `/pages/${page}`;
 	}
-	return url || DEFAULT_URL;
+	return url;
 };

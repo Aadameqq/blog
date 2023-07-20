@@ -15,6 +15,9 @@ export default {
 				bg: '#171717',
 				scrollbar: '#181818',
 				code: '#282b2e'
+			},
+			aria: {
+				current: 'current="page"'
 			}
 		}
 	},
