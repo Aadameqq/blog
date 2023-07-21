@@ -19,7 +19,7 @@
 <DefaultLayout>
 	<main>
 		<h1 class="text-gray-100 text-5xl font-bold">Posts</h1>
-		<p class="text-gray-300 text-sm mt-1 mb-2">
+		<p class="text-gray-400 text-sm mt-1 mb-2">
 			<span class="visually-hidden">Current category: </span>categories/{filteredPosts.filters
 				.category || 'All'}
 		</p>

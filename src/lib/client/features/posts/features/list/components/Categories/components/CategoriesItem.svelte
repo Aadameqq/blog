@@ -9,7 +9,7 @@
 	<Link
 		{url}
 		aria-current={isCurrent && 'page'}
-		class="text-gray-300 bg-zinc-800 px-3 py-1.5 rounded-lg border-2 border-solid border-zinc-600 aria-current:bg-gray-200 aria-current:text-gray-900 aria-current:border-gray-200 aria-current:font-bold"
+		class="text-gray-400 bg-zinc-800 px-3 py-1.5 rounded-lg border-2 border-solid border-zinc-600 aria-current:bg-zinc-400 aria-current:text-gray-900 aria-current:border-zinc-400 aria-current:font-bold"
 	>
 		<slot />
 	</Link>
