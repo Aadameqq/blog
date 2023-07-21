@@ -54,7 +54,7 @@
 	}
 
 	.parent :global(a) {
-		@apply underline underline-offset-2 text-blue-400;
+		@apply underline underline-offset-2 text-blue-400 transition duration-300 ease-in-out hover:text-blue-300;
 	}
 
 	.parent :global(img) {

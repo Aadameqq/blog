@@ -23,7 +23,9 @@
 	</span>
 	<div class="items-center laptop:flex {!isMenuOpen ? 'hidden' : 'h-screen'}">
 		<nav>
-			<ol class="flex items-center text-gray-300 text-lg desktop:text-xl">
+			<ol
+				class="flex items-center text-gray-300 text-lg desktop:text-xl transition duration-300 ease-in-out hover:text-zinc-400"
+			>
 				<li>
 					<Link>Home</Link>
 				</li>

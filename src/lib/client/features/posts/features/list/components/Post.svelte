@@ -9,7 +9,7 @@
 	<Link url="/posts/{post.slug}">
 		<div class="py-4 flex flex-nowrap justify-between items-center">
 			<h3
-				class="transition duration-2000 ease-in-out text-gray-50 group-hover:underline group-hover:underline-offset-2 group-hover:decoration-gray-400 group-hover:decoration-0.5"
+				class="transition duration-300 ease-in-out text-gray-50 underline decoration-transparent underline-offset-2 group-hover:decoration-gray-500"
 			>
 				{post.title}
 			</h3>
