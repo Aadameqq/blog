@@ -9,7 +9,7 @@
 	class="flex laptop:justify-between w-full pt-4 laptop:pt-9 pb-4 laptop:pb-9 laptop:items-center flex-col laptop:flex-row justify-center"
 >
 	<span class="flex justify-between w-full laptop:w-auto">
-		<h2 class="text-2xl font-bold text-gray-200 desktop:text-3xl">Adam Bryndza</h2>
+		<h2 class="text-xl font-bold text-gray-200 desktop:text-2xl">Adam Bryndza</h2>
 		<button
 			class="laptop:hidden"
 			on:click={() => (isMenuOpen = !isMenuOpen)}
@@ -24,7 +24,7 @@
 	<div class="items-center laptop:flex {!isMenuOpen ? 'hidden' : 'h-screen'}">
 		<nav>
 			<ol
-				class="flex items-center text-gray-300 text-lg desktop:text-xl transition duration-300 ease-in-out hover:text-zinc-400"
+				class="flex items-center text-gray-300 desktop:text-lg transition duration-300 ease-in-out hover:text-zinc-400"
 			>
 				<li>
 					<Link>Home</Link>
