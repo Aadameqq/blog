@@ -5,4 +5,4 @@
 	export let data: PageData;
 </script>
 
-<PostsList filteredPosts={data} />
+<PostsList {data} />

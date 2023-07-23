@@ -1,7 +1,7 @@
 ---
 title: Oauth 2.0
 keywords: test, test
-category: test2
+categorySlug: test2
 date: 21.03.2021
 description: Ddsklfklsdfksdfsjdfkldsfjsjkdklkdskjf
 ---

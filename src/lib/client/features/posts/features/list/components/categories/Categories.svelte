@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
-	import CategoriesItem from '$lib/client/features/posts/features/list/components/Categories/components/CategoriesItem.svelte';
+	import CategoriesItem from '$lib/client/features/posts/features/list/components/categories/components/CategoriesItem.svelte';
 
 	export let categories;
-	export let currentCategorySlug;
+	export let currentCategorySlug: string;
 </script>
 
 <nav>

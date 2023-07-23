@@ -1,7 +1,7 @@
-import type { Post } from '$lib/server/posts/types/Post';
+import type { Post } from '$lib/server/types/Post';
 
 const DEFAULT_PAGE = 1;
-const PER_PAGE = 10; // TODO: change
+const PER_PAGE = 10;
 export const paginatePosts = (posts: Post[], page: number) => {
 	return posts.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 };

@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { convertMdxToObject } from '$lib/server/shared/facades/mdxToObjectConverter';
+import { convertMdxToObject } from '$lib/server/facades/mdxToObjectConverter';
 
 describe('convertMdxToObject', () => {
 	test('When mdx parameter is provided and contains a valid mdx Should return object containing metadata and content from mdx file', () => {

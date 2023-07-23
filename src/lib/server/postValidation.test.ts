@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
-import { errorGetter, validatePostAndThrowErrors } from '$lib/server/posts/postValidation';
-import type { Post } from '$lib/server/posts/types/Post';
-import type { Category } from '$lib/server/categories/types/Category';
+import { errorGetter, validatePostAndThrowErrors } from '$lib/server/postValidation';
+import type { Post } from '$lib/server/types/Post';
+import type { Category } from '$lib/server/types/Category';
 
 describe('validatePostAndThrowErrors', () => {
 	const testSlug = 'test-slug';
@@ -26,7 +26,7 @@ describe('validatePostAndThrowErrors', () => {
 				const testPost = {
 					slug: testSlug,
 					[field]: value
-				} as Post;
+				} as unknown as Post;
 
 				expect(() => validatePostAndThrowErrors(testPost, testCategories)).toThrowError();
 
@@ -48,7 +48,7 @@ describe('validatePostAndThrowErrors', () => {
 	test.each([
 		{ field: 'title', values: ['abc'] },
 		{ field: 'keywords', values: ['abc'] },
-		{ field: 'category', values: testCategorySlugs },
+		{ field: 'categorySlug', values: testCategorySlugs },
 		{ field: 'date', values: ['01.01.2010', '11.11.2012'] },
 		{ field: 'description', values: ['ABC'] },
 		{ field: 'slug', values: [testSlug] },
@@ -60,7 +60,7 @@ describe('validatePostAndThrowErrors', () => {
 				const testPost = {
 					slug: testSlug,
 					[field]: value
-				} as Post;
+				} as unknown as Post;
 
 				try {
 					validatePostAndThrowErrors(testPost, testCategories);

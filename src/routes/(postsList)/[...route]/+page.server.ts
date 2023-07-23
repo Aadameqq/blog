@@ -1,14 +1,13 @@
 import type { EntryGenerator, PageServerLoad } from './$types';
-import { categories } from '$lib/server/categories/categories';
-import { posts } from '$lib/server/posts/posts';
-import { getParamValueFromRouteIfExists } from '$lib/server/shared/paramsUtils';
-import { filterPostsByCategory, sortPostsFromNewest } from '$lib/server/posts/refining';
+import { categories } from '$lib/server/categories';
+import { posts } from '$lib/server/posts';
+import { getParamValueFromRouteIfExists } from '$lib/server/paramsUtils';
+import { filterPostsByCategory, sortPostsFromNewest } from '$lib/server/refining';
 import {
 	calculatePagesFromPostsCount,
 	formatPostsPage,
 	paginatePosts
-} from '$lib/server/posts/pagination';
-import { getFilteredPostPreviewsDtoInstance } from '$lib/server/posts/dto';
+} from '$lib/server/pagination';
 
 export const prerender = true;
 
@@ -51,5 +50,17 @@ export const load: PageServerLoad = ({ params }) => {
 	filteredPosts = sortPostsFromNewest(filteredPosts);
 	filteredPosts = paginatePosts(filteredPosts, page);
 
-	return getFilteredPostPreviewsDtoInstance(filteredPosts, totalCount, page, categorySlugParam);
+	const postPreviews = filteredPosts.map(({ title, category, date, slug }) => ({
+		title,
+		category,
+		date,
+		slug
+	}));
+
+	return {
+		postPreviews,
+		currentCategory: categories.find((category) => category.slug === categorySlugParam),
+		totalPages: calculatePagesFromPostsCount(totalCount),
+		currentPage: page
+	};
 };

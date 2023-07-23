@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types';
-import { posts } from '$lib/server/posts/posts';
-import { StatusCodes } from '$lib/server/shared/enums/StatusCodes';
+import { posts } from '$lib/server/posts';
+import { StatusCodes } from '$lib/server/types/StatusCodes';
 
 export const prerender = true;
 

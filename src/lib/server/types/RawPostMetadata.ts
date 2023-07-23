@@ -1,7 +1,7 @@
 export type RawPostMetadata = {
 	title: string;
 	keywords: string;
-	category: string;
+	categorySlug: string;
 	date: string;
 	description: string;
 };

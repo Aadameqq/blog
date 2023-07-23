@@ -24,10 +24,10 @@
 	<div class="items-center laptop:flex {!isMenuOpen ? 'hidden' : 'h-screen'}">
 		<nav>
 			<ol
-				class="flex items-center text-gray-300 transition duration-300 ease-in-out hover:text-zinc-400"
+				class="flex items-center text-lg text-gray-300 transition duration-300 ease-in-out hover:text-zinc-400"
 			>
 				<li>
-					<Link class="text-lg">Home</Link>
+					<Link>Home</Link>
 				</li>
 			</ol>
 		</nav>

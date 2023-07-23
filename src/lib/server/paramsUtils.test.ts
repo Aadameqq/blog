@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { getParamValueFromRouteIfExists } from '$lib/server/shared/paramsUtils';
+import { getParamValueFromRouteIfExists } from '$lib/server/paramsUtils';
 
 describe('getParamValueFromRouteIfExists', () => {
 	test.each([

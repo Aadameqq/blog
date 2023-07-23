@@ -1,7 +1,7 @@
 ---
 title: Donec dignissim tempor augue. Maecenas at lacinia justo, quis pulvinar diam.
 keywords: test, test
-category: Software_Architecture
+categorySlug: software_architecture
 date: 12.01.2022
 description: Ddsklfklsdfksdfsjdfkldsfjsjkdklkdskjf
 ---
@@ -44,6 +44,11 @@ Sed iaculis sagittis lacus, "accumsan" faucibus risus.
 ```js
 const hello = 1;
 ```
+
+<figure>
+<img src="/images/img.png"/>
+<figcaption>Author is unfortunately unknown</figcaption>
+</figure>
 
 Integer porttitor tortor non neque ultrices, sed tincidunt orci luctus.
 

@@ -1,47 +1,43 @@
 <script lang="ts">
 	import type { Snapshot } from './$types';
 	import DefaultLayout from '$lib/client/layouts/default-layout/DefaultLayout.svelte';
-	import Post from '$lib/client/features/posts/features/list/components/Post.svelte';
+	import PostPreview from '$lib/client/features/posts/features/list/components/PostPreview.svelte';
 	import Pagination from '$lib/client/features/posts/features/list/components/pagination/Pagination.svelte';
-	import Categories from '$lib/client/features/posts/features/list/components/Categories/Categories.svelte';
+	import Categories from '$lib/client/features/posts/features/list/components/categories/Categories.svelte';
 	import { urlGenerator } from '$lib/client/features/posts/features/list/services/url-generator/urlGenerator';
 
-	export let filteredPosts; // TODO: add type
+	export let data;
 
 	export const snapshot: Snapshot = {
 		capture: () => window.scrollY,
 		restore: (scrollY: number) => window.scrollTo(0, scrollY)
 	};
 
-	$: generateUrl = urlGenerator({ categorySlug: filteredPosts.filters.category });
+	$: generateUrl = urlGenerator({ categorySlug: data.currentCategory?.slug });
 </script>
 
 <DefaultLayout>
 	<main>
 		<h1 class="text-gray-100 text-5xl font-bold">Posts</h1>
 		<p class="text-gray-400 text-sm mt-1 mb-2">
-			<span class="visually-hidden">Current category: </span>categories/{filteredPosts.filters
-				.category || 'All'}
+			<span class="visually-hidden">Current category: </span>categories/{data.currentCategory
+				?.name || 'All'}
 		</p>
 		<section class="mt-6">
 			<Categories
-				categories={filteredPosts.categories}
-				currentCategorySlug={filteredPosts.filters.category}
+				categories={data.categories}
+				currentCategorySlug={data.currentCategory?.slug}
 				{generateUrl}
 			/>
 		</section>
 		<section class="mt-8">
 			<div>
-				{#each filteredPosts.posts as post (post.slug)}
-					<Post {post} />
+				{#each data.postPreviews as postPreview (postPreview.slug)}
+					<PostPreview {postPreview} />
 				{/each}
 			</div>
 			<div class="mt-6">
-				<Pagination
-					{generateUrl}
-					currentPage={filteredPosts.filters.pagination.page}
-					totalPages={filteredPosts.filters.pagination.totalPages}
-				/>
+				<Pagination {generateUrl} currentPage={data.currentPage} totalPages={data.totalPages} />
 			</div>
 		</section>
 	</main>

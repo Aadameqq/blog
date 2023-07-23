@@ -20,8 +20,7 @@
 				<div class="text-gray-400 mb-2">
 					<span class="bi bi-bookmark-fill text-gray-300" aria-hidden="true"><!-- --></span>
 					<span class="visually-hidden">Post's category: </span>
-					<span>{post.category}</span>
-					<!-- TODO: we should not show category slug -->
+					<span>{post.category.name}</span>
 				</div>
 				<div class="text-gray-400 mb-6">
 					<span class="bi bi-clock-fill text-gray-300" aria-hidden="true"><!-- --></span>

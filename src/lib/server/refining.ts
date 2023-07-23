@@ -1,4 +1,4 @@
-import type { Post } from '$lib/server/posts/types/Post';
+import type { Post } from '$lib/server/types/Post';
 
 const SHOULD_SWAP = 1;
 const SHOULD_NOT_SWAP = -1;
@@ -12,5 +12,5 @@ export const sortPostsFromNewest = (posts: Post[]) => {
 };
 
 export const filterPostsByCategory = (posts: Post[], categorySlug: string) => {
-	return posts.filter((post) => post.category.toLowerCase() === categorySlug.toLowerCase());
+	return posts.filter((post) => post.category.slug === categorySlug);
 };

@@ -1,15 +1,15 @@
 [
   {
-    "name": "test",
+    "name": "Typescript",
     "slug": "test"
   },
   {
-    "name": "test2",
+    "name": "Code_Review",
     "slug": "test2"
   },
   {
     "name": "Software_Architecture",
-    "slug": "Software_Architecture"
+    "slug": "software_architecture"
   }
 ]
 
