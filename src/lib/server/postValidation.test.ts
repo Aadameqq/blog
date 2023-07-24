@@ -14,7 +14,7 @@ describe('validatePostAndThrowErrors', () => {
 	test.each([
 		{ field: 'title', values: [undefined, '', 1] },
 		{ field: 'keywords', values: [undefined, '', 1] },
-		{ field: 'category', values: [undefined, '', 'abcd'] },
+		{ field: 'categorySlug', values: [undefined, '', 'abcd'] },
 		{ field: 'date', values: [undefined, '', 'abcd', '00.11.12'] },
 		{ field: 'description', values: [undefined, '', 1] },
 		{ field: 'slug', values: [undefined, '', 1, 'abc_', 'abcd.efgh'] },
@@ -48,7 +48,7 @@ describe('validatePostAndThrowErrors', () => {
 	test.each([
 		{ field: 'title', values: ['abc'] },
 		{ field: 'keywords', values: ['abc'] },
-		{ field: 'categorySlug', values: testCategorySlugs },
+		{ field: 'category', values: testCategories },
 		{ field: 'date', values: ['01.01.2010', '11.11.2012'] },
 		{ field: 'description', values: ['ABC'] },
 		{ field: 'slug', values: [testSlug] },
