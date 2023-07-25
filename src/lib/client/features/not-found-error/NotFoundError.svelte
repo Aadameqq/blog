@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 	import Link from '$lib/client/components/Link.svelte';
-	import { getFullTitle } from '$lib/client/services/fullTitleGetter.js';
+	import { getFullTitle } from '$lib/client/services/fullTitleGetter';
 </script>
 
 <svelte:head>
