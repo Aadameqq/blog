@@ -27,7 +27,7 @@ jobs:
       - name: build
         env:
           BASE_PATH: '/blog'
-          ORIGIN: 'https://aadameqq.github.io'
+          PUBLIC_ORIGIN: 'https://aadameqq.github.io'
         run: |
           npm run build
           touch dist/.nojekyll
