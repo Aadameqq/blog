@@ -1,9 +1,11 @@
 <script>
 	import Link from '$lib/client/components/Link.svelte';
-	import Seo from '$lib/client/components/Seo.svelte';
+	import { getFullTitle } from '$lib/client/services/fullTitleGetter.js';
 </script>
 
-<Seo title="Not Found" shouldIndex={false} />
+<svelte:head>
+	<title>{getFullTitle('Not Found')}</title>
+</svelte:head>
 
 <main class="flex justify-center items-center flex-col h-screen">
 	<p
