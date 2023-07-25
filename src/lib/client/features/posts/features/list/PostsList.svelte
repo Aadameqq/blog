@@ -5,6 +5,7 @@
 	import Pagination from '$lib/client/features/posts/features/list/components/pagination/Pagination.svelte';
 	import Categories from '$lib/client/features/posts/features/list/components/categories/Categories.svelte';
 	import { urlGenerator } from '$lib/client/features/posts/features/list/services/url-generator/urlGenerator';
+	import Seo from '$lib/client/components/Seo.svelte';
 
 	export let data;
 
@@ -15,6 +16,8 @@
 
 	$: generateUrl = urlGenerator({ categorySlug: data.currentCategory?.slug });
 </script>
+
+<Seo title={data.currentCategory ? `Category ${data.currentCategory.name}` : 'Home'} />
 
 <DefaultLayout>
 	<main>

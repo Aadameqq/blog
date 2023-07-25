@@ -2,13 +2,16 @@
 	import DefaultLayout from '$lib/client/layouts/default-layout/DefaultLayout.svelte';
 	import MdStylesProvider from '$lib/client/features/posts/features/single/components/MdStylesProvider.svelte';
 	import { formatDate } from '$lib/client/features/posts/services/dateFormatter';
+	import Seo from '$lib/client/components/Seo.svelte';
 
 	export let post;
 </script>
 
-<svelte:head>
-	<title>{post.title}</title>
-</svelte:head>
+<Seo
+	title={post.title}
+	ogType={'article'}
+	ogArticle={{ publishedTime: post.date, section: post.category.name }}
+/>
 
 <DefaultLayout>
 	<main>

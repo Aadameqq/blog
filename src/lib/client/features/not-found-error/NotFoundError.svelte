@@ -1,6 +1,9 @@
 <script>
 	import Link from '$lib/client/components/Link.svelte';
+	import Seo from '$lib/client/components/Seo.svelte';
 </script>
+
+<Seo title="Not Found" shouldIndex={false} />
 
 <main class="flex justify-center items-center flex-col h-screen">
 	<p
