@@ -5,7 +5,7 @@
 	export let isCurrent: boolean;
 </script>
 
-<li class="mx-2 first:ml-0 last:mr-0">
+<li>
 	<Link
 		{url}
 		aria-current={isCurrent && 'page'}

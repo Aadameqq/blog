@@ -8,7 +8,7 @@
 
 <nav>
 	<span class="visually-hidden">Categories: </span>
-	<ul class="flex flex-wrap">
+	<ul class="flex flex-wrap gap-y-6 gap-x-4">
 		<CategoriesItem isCurrent={!currentCategorySlug && page}>All</CategoriesItem>
 		{#each categories as category (category.slug)}
 			<CategoriesItem

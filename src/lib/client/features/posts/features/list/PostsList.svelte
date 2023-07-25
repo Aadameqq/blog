@@ -38,10 +38,15 @@
 				{#each data.postPreviews as postPreview (postPreview.slug)}
 					<PostPreview {postPreview} />
 				{/each}
+				{#if data.postPreviews.length === 0}
+					<div class="text-gray-200 text-lg text-center laptop:text-left">No posts</div>
+				{/if}
 			</div>
-			<div class="mt-6">
-				<Pagination {generateUrl} currentPage={data.currentPage} totalPages={data.totalPages} />
-			</div>
+			{#if data.totalPages > 1}
+				<div class="mt-6">
+					<Pagination {generateUrl} currentPage={data.currentPage} totalPages={data.totalPages} />
+				</div>
+			{/if}
 		</section>
 	</main>
 </DefaultLayout>

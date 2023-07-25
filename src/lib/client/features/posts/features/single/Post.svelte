@@ -18,7 +18,7 @@
 	<main>
 		<article>
 			<header>
-				<h1 class="text-gray-100 text-2xl laptop:text-3xl font-bold mb-3 desktop:text-4xl">
+				<h1 class="text-gray-50 text-2xl laptop:text-3xl font-bold mb-3 desktop:text-4xl">
 					{post.title}
 				</h1>
 				<div class="text-gray-400 mb-2">

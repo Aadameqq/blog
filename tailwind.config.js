@@ -4,7 +4,7 @@ export default {
 	theme: {
 		screens: {
 			laptop: '768px',
-			desktop: '1500px'
+			desktop: '1280px'
 		},
 		fontFamily: {
 			numbers: ['Noto Sans', 'sans-serif'],
