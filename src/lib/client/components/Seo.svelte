@@ -3,6 +3,7 @@
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { getFullTitle } from '$lib/client/services/fullTitleGetter';
+	import { OgTypes } from '$lib/client/types/OgTypes';
 
 	const ogArticleProperties = {
 		publishedTime: 'published_time',
@@ -14,7 +15,7 @@
 	export let description =
 		'A blog where I share my thoughts and experiences on various programming topics';
 	export let image = '/images/favicon.png';
-	export let ogType = 'website';
+	export let ogType: OgTypes = OgTypes.DEFAULT;
 	export let ogArticle: {
 		publishedTime?: string;
 		author?: string;
@@ -29,8 +30,6 @@
 
 	$: currentUrl = `${originWithBasePath}${$page.url.pathname}`;
 	$: imageUrl = `${originWithBasePath}${image}`;
-
-	// 	TODO: enum for ogtype
 </script>
 
 <svelte:head>
@@ -45,9 +44,9 @@
 	<meta property="og:type" content={ogType} />
 	<meta property="og:url" content={currentUrl} />
 	<meta property="og:image" content={imageUrl} />
-	{#if ogType === 'article'}
+	{#if ogType === OgTypes.ARTICLE}
 		{#each Object.entries(ogArticle) as [key, value]}
-			<meta property="article:{ogArticleProperties[key]}" content={value} />
+			<meta property="{OgTypes.ARTICLE}:{ogArticleProperties[key]}" content={value} />
 		{/each}
 	{/if}
 

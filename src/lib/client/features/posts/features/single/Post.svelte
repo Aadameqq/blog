@@ -11,6 +11,7 @@
 	title={post.title}
 	ogType={'article'}
 	ogArticle={{ publishedTime: post.date, section: post.category.name }}
+	description={post.description}
 />
 
 <DefaultLayout>
