@@ -22,7 +22,7 @@
 
 	$: fullTitle = `${title} | Adam Bryndza's blog`;
 
-	if (!env.PUBLIC_ORIGIN) throw new Error('ORIGIN env variable is not defined');
+	if (!env.PUBLIC_ORIGIN) throw new Error('PUBLIC_ORIGIN env variable is not defined');
 
 	$: originWithBasePath = `${env.PUBLIC_ORIGIN}${base}`;
 
@@ -32,6 +32,7 @@
 
 <svelte:head>
 	<title>{fullTitle}</title>
+	<link rel="icon" type="image/x-icon" href="{base}/images/favicon.png" />
 	<meta name="description" content={description} />
 	{#if !shouldIndex}
 		<meta name="robots" content="noindex" />
