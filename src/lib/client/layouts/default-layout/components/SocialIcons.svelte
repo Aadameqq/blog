@@ -7,21 +7,21 @@
 <address>
 	<ol class="flex items-center">
 		<li>
-			<Link
+			<Link url="https://github.com/Aadameqq"
 				><span class="visually-hidden">My Github profile </span><span
 					class="icon bi bi-github {iconClass}"><!----></span
 				></Link
 			>
 		</li>
 		<li>
-			<Link
+			<Link href="#"
 				><span class="visually-hidden">My Facebook profile </span><span
 					class="icon bi bi-facebook {iconClass}"><!----></span
 				>
 			</Link>
 		</li>
 		<li>
-			<Link
+			<Link href="#"
 				><span class="visually-hidden">My LinkedIn profile </span><span
 					class="icon bi bi-linkedin {iconClass}"><!----></span
 				>
