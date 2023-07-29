@@ -21,7 +21,7 @@
 			</Link>
 		</li>
 		<li>
-			<Link href="#"
+			<Link href="https://www.linkedin.com/in/adam-bryndza/"
 				><span class="visually-hidden">My LinkedIn profile </span><span
 					class="icon bi bi-linkedin {iconClass}"><!----></span
 				>
