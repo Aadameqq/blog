@@ -3,6 +3,7 @@
 	import MdStylesProvider from '$lib/client/features/posts/features/single/components/MdStylesProvider.svelte';
 	import { formatDate } from '$lib/client/features/posts/services/dateFormatter';
 	import Seo from '$lib/client/components/Seo.svelte';
+	import Comments from '$lib/client/features/posts/features/single/components/Comments.svelte';
 
 	export let post;
 </script>
@@ -38,6 +39,9 @@
 					{@html post.content}
 				</div>
 			</MdStylesProvider>
+			<section class="mt-20">
+				<Comments />
+			</section>
 		</article>
 	</main>
 </DefaultLayout>
