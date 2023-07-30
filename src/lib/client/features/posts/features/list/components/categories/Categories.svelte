@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import CategoriesItem from '$lib/client/features/posts/features/list/components/categories/components/CategoriesItem.svelte';
+	import { routes } from '$lib/client/config/routes';
 
 	export let categories;
 	export let currentCategorySlug: string;
@@ -12,7 +13,7 @@
 		<CategoriesItem isCurrent={!currentCategorySlug && page}>All</CategoriesItem>
 		{#each categories as category (category.slug)}
 			<CategoriesItem
-				url="/categories/{category.slug}"
+				url={routes.blog({ categorySlug: category.slug })}
 				isCurrent={currentCategorySlug === category.slug}>{category.name}</CategoriesItem
 			>
 		{/each}

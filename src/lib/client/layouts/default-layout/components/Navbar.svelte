@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
 	import SocialIcons from './SocialIcons.svelte';
 	import Link from '$lib/client/components/Link.svelte';
+	import { routes } from '$lib/client/config/routes';
 
 	let isMenuOpen = false;
 </script>
@@ -27,7 +28,7 @@
 				class="flex items-center text-lg text-gray-300 transition duration-300 ease-in-out hover:text-zinc-400"
 			>
 				<li>
-					<Link>Home</Link>
+					<Link class={routes.blog({})}>Home</Link>
 				</li>
 			</ol>
 		</nav>

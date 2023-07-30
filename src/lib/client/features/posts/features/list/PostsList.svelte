@@ -44,7 +44,11 @@
 			</div>
 			{#if data.totalPages > 1}
 				<div class="mt-6">
-					<Pagination {generateUrl} currentPage={data.currentPage} totalPages={data.totalPages} />
+					<Pagination
+						currentCategorySlug={data.currentCategory?.slug}
+						currentPage={data.currentPage}
+						totalPages={data.totalPages}
+					/>
 				</div>
 			{/if}
 		</section>

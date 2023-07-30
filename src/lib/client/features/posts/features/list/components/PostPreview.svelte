@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
 	import Link from '$lib/client/components/Link.svelte';
 	import { formatDate } from '$lib/client/features/posts/services/dateFormatter';
+	import { routes } from '$lib/client/config/routes';
 
 	export let postPreview;
 </script>
 
 <article class="border-t border-dashed border-gray-500 last:border-b group">
-	<Link url="/posts/{postPreview.slug}">
+	<Link url={routes.post(postPreview.slug)}>
 		<div
 			class="py-3 flex flex-nowrap desktop:justify-between items-center flex-col desktop:flex-row"
 		>
