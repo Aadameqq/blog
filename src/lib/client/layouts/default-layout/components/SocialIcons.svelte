@@ -8,21 +8,21 @@
 <address>
 	<ol class="flex items-center">
 		<li>
-			<Link url={externalLinks.github()}
+			<Link url={externalLinks.github()} isExternal
 				><span class="visually-hidden">My Github profile </span><span
 					class="icon bi bi-github {iconClass}"><!----></span
 				></Link
 			>
 		</li>
 		<li>
-			<Link href={externalLinks.facebook()}
+			<Link href={externalLinks.facebook()} isExternal
 				><span class="visually-hidden">My Facebook profile </span><span
 					class="icon bi bi-facebook {iconClass}"><!----></span
 				>
 			</Link>
 		</li>
 		<li>
-			<Link href={externalLinks.linkedIn()}
+			<Link href={externalLinks.linkedIn()} isExternal
 				><span class="visually-hidden">My LinkedIn profile </span><span
 					class="icon bi bi-linkedin {iconClass}"><!----></span
 				>

@@ -1,10 +1,15 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 
-	export let url;
+	export let url: string;
+	export let isExternal: boolean;
 </script>
 
-<a href="{base}{url || '/'}" {...$$restProps}>
+<a
+	href="{isExternal ? '' : base}{url || '/'}"
+	{...$$restProps}
+	{...isExternal ? { target: '_blank' } : {}}
+>
 	<slot />
 </a>
 
