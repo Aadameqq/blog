@@ -1,44 +1,44 @@
 @import 'highlight.js/styles/androidstudio.css';
-@import "bootstrap-icons/font/bootstrap-icons.css";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
-    .visually-hidden {
-        border: 0;
-        padding: 0;
-        height: 1px;
-        position: absolute;
-        overflow: hidden;
-        white-space: nowrap;
-        clip: rect(0 0 0 0);
-        width: 1px;
-    }
+	.visually-hidden {
+		border: 0;
+		padding: 0;
+		height: 1px;
+		position: absolute;
+		overflow: hidden;
+		white-space: nowrap;
+		clip: rect(0 0 0 0);
+		width: 1px;
+	}
 }
 
 @font-face {
-    font-family: "Fira Code";
-    src: url("/fonts/firaCode/FiraCode-Regular.ttf");
+	font-family: 'Fira Code';
+	src: url('/fonts/firaCode/FiraCode-Regular.ttf');
 }
 @font-face {
-    font-family: "Space Mono";
-    src: url("/fonts/spaceMono/SpaceMono-Regular.ttf");
+	font-family: 'Space Mono';
+	src: url('/fonts/spaceMono/SpaceMono-Regular.ttf');
 }
 
-*{
-    font-family: "Space Mono",monospace;
+* {
+	font-family: 'Space Mono', monospace;
 }
 
-body{
-    @apply bg-bg;
+body {
+	@apply bg-bg;
 }
 
 ::-moz-selection {
-    @apply text-gray-900 bg-gray-200
+	@apply text-gray-900 bg-gray-200;
 }
 
 ::selection {
-    @apply text-gray-900 bg-gray-200
+	@apply text-gray-900 bg-gray-200;
 }
