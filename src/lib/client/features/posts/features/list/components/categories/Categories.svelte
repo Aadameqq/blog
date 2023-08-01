@@ -2,8 +2,9 @@
 	import { page } from '$app/stores';
 	import CategoriesItem from '$lib/client/features/posts/features/list/components/categories/components/CategoriesItem.svelte';
 	import { routes } from '$lib/client/config/routes';
+	import type { Category } from '$lib/types/Category';
 
-	export let categories;
+	export let categories: Category[];
 	export let currentCategorySlug: string;
 </script>
 

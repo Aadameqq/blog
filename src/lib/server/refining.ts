@@ -1,4 +1,4 @@
-import type { Post } from '$lib/server/types/Post';
+import type { Post } from '$lib/types/Post';
 
 const SHOULD_SWAP = 1;
 const SHOULD_NOT_SWAP = -1;

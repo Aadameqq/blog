@@ -1,6 +1,6 @@
 import { validationSchemaBuilder as builder } from '$lib/server/facades/validation';
-import type { Post } from '$lib/server/types/Post';
-import type { Category } from '$lib/server/types/Category';
+import type { Post } from '$lib/types/Post';
+import type { Category } from '$lib/types/Category';
 
 const dateRegex = /^([1-2][0-9]|3[0-1]|0[1-9])\.(0[1-9]|1[0-2])\.([0-9]{4})$/;
 

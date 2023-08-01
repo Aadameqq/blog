@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { calculatePagesFromPostsCount, paginatePosts } from '$lib/server/pagination';
-import type { Post } from '$lib/server/types/Post';
+import type { Post } from '$lib/types/Post';
 import { getArrayWithRangeOfN } from '../../tests/utils';
 
 describe('calculatePagesFromPostsCount', () => {

@@ -1,4 +1,4 @@
-export type PostMetadata = {
+export type Post = {
 	title: string;
 	keywords: string;
 	category: {
@@ -8,4 +8,5 @@ export type PostMetadata = {
 	date: string;
 	description: string;
 	slug: string;
+	content: string;
 };

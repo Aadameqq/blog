@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Link from '$lib/client/components/Link.svelte';
 
-	export let url;
+	export let url: string;
 	export let isCurrent: boolean;
 </script>
 

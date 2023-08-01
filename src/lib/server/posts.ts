@@ -1,11 +1,11 @@
-import type { Post } from '$lib/server/types/Post';
+import type { Post } from '$lib/types/Post';
 import type { RawPostMetadata } from '$lib/server/types/RawPostMetadata';
 import { getPostSlugFromPath } from '$lib/server/postSlugUtils';
 import { validatePostAndThrowErrors } from '$lib/server/postValidation';
 import { convertMdxToObject } from '$lib/server/facades/mdxToObjectConverter';
 import { convertMdToHtml } from '$lib/server/facades/mdToHtmlConverter';
 import { categories } from '$lib/server/categories';
-import type { Category } from '$lib/server/types/Category';
+import type { Category } from '$lib/types/Category';
 
 const postFilesByPath: Record<string, string> = import.meta.glob('/src/content/posts/*.md', {
 	as: 'raw',

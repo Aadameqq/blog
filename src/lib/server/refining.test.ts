@@ -1,6 +1,6 @@
 import { describe, test } from 'vitest';
 import { filterPostsByCategory, sortPostsFromNewest } from '$lib/server/refining';
-import type { Post } from '$lib/server/types/Post';
+import type { Post } from '$lib/types/Post';
 
 describe('filterPostsByCategory', () => {
 	const testPosts = [

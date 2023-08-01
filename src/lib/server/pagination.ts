@@ -1,4 +1,4 @@
-import type { Post } from '$lib/server/types/Post';
+import type { Post } from '$lib/types/Post';
 
 const DEFAULT_PAGE = 1;
 const DEFAULT_PER_PAGE = 10;

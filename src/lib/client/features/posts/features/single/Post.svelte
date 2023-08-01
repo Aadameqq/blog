@@ -4,8 +4,9 @@
 	import { formatDate } from '$lib/client/features/posts/services/dateFormatter';
 	import Seo from '$lib/client/components/Seo.svelte';
 	import Comments from '$lib/client/features/posts/features/single/components/Comments.svelte';
+	import type { Post } from '$lib/types/Post';
 
-	export let post;
+	export let post: Post;
 </script>
 
 <Seo

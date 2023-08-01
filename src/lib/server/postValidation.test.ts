@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 import { errorGetter, validatePostAndThrowErrors } from '$lib/server/postValidation';
-import type { Post } from '$lib/server/types/Post';
-import type { Category } from '$lib/server/types/Category';
+import type { Post } from '$lib/types/Post';
+import type { Category } from '$lib/types/Category';
 
 describe('validatePostAndThrowErrors', () => {
 	const testSlug = 'test-slug';
