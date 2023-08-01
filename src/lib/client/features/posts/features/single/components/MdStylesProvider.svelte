@@ -70,10 +70,6 @@
 	}
 
 	.parent :global(em) {
-		@apply text-gray-100 font-bold not-italic;
-	}
-
-	.parent :global(em strong) {
-		@apply font-bold;
+		@apply italic;
 	}
 </style>
