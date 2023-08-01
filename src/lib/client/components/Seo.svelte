@@ -20,7 +20,7 @@
 		publishedTime?: string;
 		author?: string;
 		section?: string;
-	};
+	} = {};
 
 	$: fullTitle = getFullTitle(title);
 
