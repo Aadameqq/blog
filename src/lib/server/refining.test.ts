@@ -1,6 +1,6 @@
 import { describe, test } from 'vitest';
 import { filterPostsByCategory, sortPostsFromNewest } from '$lib/server/refining';
-import type { Post } from '$lib/types/Post';
+import type { TPost } from '$lib/types/TPost';
 
 describe('filterPostsByCategory', () => {
 	const testPosts = [
@@ -19,7 +19,7 @@ describe('filterPostsByCategory', () => {
 		{
 			category: { slug: 'cattwo' }
 		}
-	] as unknown as Post[];
+	] as unknown as TPost[];
 
 	test('When categorySlug and posts parameters are provided Should return all posts with given category slug', ({
 		expect
@@ -50,7 +50,7 @@ describe('sortPostsFromNewest', () => {
 		{
 			date: '01.01.2021'
 		}
-	] as unknown as Post[];
+	] as unknown as TPost[];
 
 	test('When posts parameter is provided Should return posts sorted by date from newest to oldest', ({
 		expect

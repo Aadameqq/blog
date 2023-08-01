@@ -2,9 +2,9 @@
 	import Link from '$lib/client/components/Link.svelte';
 	import { formatDate } from '$lib/client/features/posts/services/dateFormatter';
 	import { routes } from '$lib/client/config/routes';
-	import type { PostPreview } from '$lib/types/PostPreview';
+	import type { TPostPreview } from '$lib/types/TPostPreview';
 
-	export let postPreview: PostPreview;
+	export let postPreview: TPostPreview;
 </script>
 
 <article class="border-t border-dashed border-gray-500 last:border-b group">

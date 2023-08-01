@@ -3,15 +3,15 @@
 	import MdStylesProvider from '$lib/client/features/posts/features/single/components/MdStylesProvider.svelte';
 	import { formatDate } from '$lib/client/features/posts/services/dateFormatter';
 	import Seo from '$lib/client/components/Seo.svelte';
-	import Comments from '$lib/client/features/posts/features/single/components/Comments.svelte';
-	import type { Post } from '$lib/types/Post';
+	import type { TPost } from '$lib/types/TPost';
+	import { OgTypes } from '$lib/client/types/OgTypes';
 
-	export let post: Post;
+	export let post: TPost;
 </script>
 
 <Seo
 	title={post.title}
-	ogType={'article'}
+	ogType={OgTypes.ARTICLE}
 	ogArticle={{ publishedTime: post.date, section: post.category.name }}
 	description={post.description}
 />
@@ -41,7 +41,7 @@
 				</div>
 			</MdStylesProvider>
 			<section class="mt-20">
-				<Comments />
+				<!--				<Comments />-->
 			</section>
 		</article>
 	</main>

@@ -1,4 +1,4 @@
-export type PostPreview = {
+export type TPostPreview = {
 	title: string;
 	slug: string;
 	date: string;

@@ -4,7 +4,7 @@
 
 	export let currentPage: number;
 	export let totalPages: number;
-	export let currentCategorySlug: string;
+	export let currentCategorySlug: string | undefined;
 
 	$: doesPreviousPageExist = currentPage > 1;
 	$: doesNextPageExist = currentPage < totalPages;

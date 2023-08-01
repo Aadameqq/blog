@@ -1,6 +1,6 @@
 import { validationSchemaBuilder as builder } from '$lib/server/facades/validation';
-import type { Post } from '$lib/types/Post';
-import type { Category } from '$lib/types/Category';
+import type { TPost } from '$lib/types/TPost';
+import type { TCategory } from '$lib/types/TCategory';
 
 const dateRegex = /^([1-2][0-9]|3[0-1]|0[1-9])\.(0[1-9]|1[0-2])\.([0-9]{4})$/;
 
@@ -8,7 +8,7 @@ export const errorGetter = (postSlug: string) => (field: string) => {
 	return `In the post with the slug ${postSlug}, the ${field} has an incorrect format`;
 };
 
-export const validatePostAndThrowErrors = (post: Post, categories: Category[]) => {
+export const validatePostAndThrowErrors = (post: TPost, categories: TCategory[]) => {
 	const getError = errorGetter(post.slug);
 
 	const schema = builder.object({

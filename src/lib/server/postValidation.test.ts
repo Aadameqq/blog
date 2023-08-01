@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 import { errorGetter, validatePostAndThrowErrors } from '$lib/server/postValidation';
-import type { Post } from '$lib/types/Post';
-import type { Category } from '$lib/types/Category';
+import type { TPost } from '$lib/types/TPost';
+import type { TCategory } from '$lib/types/TCategory';
 
 describe('validatePostAndThrowErrors', () => {
 	const testSlug = 'test-slug';
@@ -9,7 +9,7 @@ describe('validatePostAndThrowErrors', () => {
 
 	const testCategorySlugs = ['test', 'test1', 'test2'];
 
-	const testCategories = testCategorySlugs.map((category) => ({ slug: category })) as Category[];
+	const testCategories = testCategorySlugs.map((category) => ({ slug: category })) as TCategory[];
 
 	test.each([
 		{ field: 'title', values: [undefined, '', 1] },
@@ -26,7 +26,7 @@ describe('validatePostAndThrowErrors', () => {
 				const testPost = {
 					slug: testSlug,
 					[field]: value
-				} as unknown as Post;
+				} as unknown as TPost;
 
 				expect(() => validatePostAndThrowErrors(testPost, testCategories)).toThrowError();
 
@@ -60,7 +60,7 @@ describe('validatePostAndThrowErrors', () => {
 				const testPost = {
 					slug: testSlug,
 					[field]: value
-				} as unknown as Post;
+				} as unknown as TPost;
 
 				try {
 					validatePostAndThrowErrors(testPost, testCategories);

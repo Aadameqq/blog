@@ -5,7 +5,7 @@
 	import { getFullTitle } from '$lib/client/services/fullTitleGetter';
 	import { OgTypes } from '$lib/client/types/OgTypes';
 
-	const ogArticleProperties = {
+	const ogArticleProperties: { [key: string]: string | undefined } = {
 		publishedTime: 'published_time',
 		author: 'author',
 		section: 'section'
@@ -20,16 +20,20 @@
 		publishedTime?: string;
 		author?: string;
 		section?: string;
-	} = { author: 'Adam Bryndza' };
+	};
 
 	$: fullTitle = getFullTitle(title);
 
 	if (!env.PUBLIC_ORIGIN) throw new Error('PUBLIC_ORIGIN env variable is not defined');
-
 	$: originWithBasePath = `${env.PUBLIC_ORIGIN}${base}`;
 
 	$: currentUrl = `${originWithBasePath}${$page.url.pathname}`;
 	$: imageUrl = `${originWithBasePath}${image}`;
+
+	$: ogArticleWithDefaults = {
+		author: 'Adam Bryndza',
+		...ogArticle
+	};
 </script>
 
 <svelte:head>
@@ -45,7 +49,7 @@
 	<meta property="og:url" content={currentUrl} />
 	<meta property="og:image" content={imageUrl} />
 	{#if ogType === OgTypes.ARTICLE}
-		{#each Object.entries(ogArticle) as [key, value]}
+		{#each Object.entries(ogArticleWithDefaults) as [key, value]}
 			<meta property="{OgTypes.ARTICLE}:{ogArticleProperties[key]}" content={value} />
 		{/each}
 	{/if}

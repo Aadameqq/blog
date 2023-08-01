@@ -1,18 +1,18 @@
-import type { Post } from '$lib/types/Post';
+import type { TPost } from '$lib/types/TPost';
 import type { RawPostMetadata } from '$lib/server/types/RawPostMetadata';
 import { getPostSlugFromPath } from '$lib/server/postSlugUtils';
 import { validatePostAndThrowErrors } from '$lib/server/postValidation';
 import { convertMdxToObject } from '$lib/server/facades/mdxToObjectConverter';
 import { convertMdToHtml } from '$lib/server/facades/mdToHtmlConverter';
 import { categories } from '$lib/server/categories';
-import type { Category } from '$lib/types/Category';
+import type { TCategory } from '$lib/types/TCategory';
 
 const postFilesByPath: Record<string, string> = import.meta.glob('/src/content/posts/*.md', {
 	as: 'raw',
 	eager: true
 });
 
-export const posts: Post[] = Object.entries(postFilesByPath).map(([path, fileContent]) => {
+export const posts: TPost[] = Object.entries(postFilesByPath).map(([path, fileContent]) => {
 	const slug = getPostSlugFromPath(path);
 
 	const { metadata: rawMetadata, content: rawContent } =
@@ -24,7 +24,7 @@ export const posts: Post[] = Object.entries(postFilesByPath).map(([path, fileCon
 
 	const post = {
 		...restRawMetadata,
-		category: categories.find((category) => category.slug === categorySlug) as Category,
+		category: categories.find((category) => category.slug === categorySlug) as TCategory,
 		slug,
 		content: content
 	};

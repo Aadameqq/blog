@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 
-	export let url: string;
-	export let isExternal: boolean;
+	export let url: string | undefined = undefined;
+	export let isExternal = false;
 </script>
 
 <a

@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { calculatePagesFromPostsCount, paginatePosts } from '$lib/server/pagination';
-import type { Post } from '$lib/types/Post';
+import type { TPost } from '$lib/types/TPost';
 import { getArrayWithRangeOfN } from '../../tests/utils';
 
 describe('calculatePagesFromPostsCount', () => {
@@ -14,7 +14,7 @@ describe('calculatePagesFromPostsCount', () => {
 });
 
 describe('paginatePosts', () => {
-	const testPosts = getArrayWithRangeOfN(36) as unknown as Post[];
+	const testPosts = getArrayWithRangeOfN(36) as unknown as TPost[];
 
 	test('When page, perPage and posts parameters are provided Should return post within range from (page-1)*perPage+1 to page*perPage', ({
 		expect

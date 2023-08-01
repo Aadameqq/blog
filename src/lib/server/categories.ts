@@ -1,4 +1,4 @@
 import rawCategories from '../../content/categories.json';
-import type { Category } from '$lib/types/Category';
+import type { TCategory } from '$lib/types/TCategory';
 
-export const categories: Category[] = rawCategories;
+export const categories: TCategory[] = rawCategories;

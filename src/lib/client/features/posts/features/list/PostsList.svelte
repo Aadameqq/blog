@@ -1,22 +1,17 @@
 <script lang="ts">
-	import type { Snapshot } from './$types';
 	import DefaultLayout from '$lib/client/layouts/default-layout/DefaultLayout.svelte';
-	import PostPreview from '$lib/client/features/posts/features/list/components/PostPreview.svelte';
 	import Pagination from '$lib/client/features/posts/features/list/components/pagination/Pagination.svelte';
 	import Categories from '$lib/client/features/posts/features/list/components/categories/Categories.svelte';
 	import Seo from '$lib/client/components/Seo.svelte';
-	import type { Category } from '$lib/types/Category';
+	import type { TCategory } from '$lib/types/TCategory';
+	import type { TPostPreview } from '$lib/types/TPostPreview';
+	import PostPreview from '$lib/client/features/posts/features/list/components/PostPreview.svelte';
 
-	export let currentCategory: Category | undefined;
-	export let postPreviews: PostPreview[];
-	export let categories: Category[];
+	export let currentCategory: TCategory | undefined;
+	export let postPreviews: TPostPreview[];
+	export let categories: TCategory[];
 	export let totalPages: number;
 	export let currentPage: number;
-
-	export const snapshot: Snapshot = {
-		capture: () => window.scrollY,
-		restore: (scrollY: number) => window.scrollTo(0, scrollY)
-	};
 </script>
 
 <Seo title={currentCategory ? `Category ${currentCategory.name}` : 'Home'} />
