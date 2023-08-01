@@ -1,15 +1,19 @@
 [
   {
-    "name": "Typescript",
-    "slug": "test"
+    "name": "C_Sharp",
+    "slug": "c-sharp"
   },
   {
-    "name": "Code_Review",
-    "slug": "test2"
+    "name": "Algorithms",
+    "slug": "algorithms"
   },
   {
-    "name": "Software_Architecture",
-    "slug": "software_architecture"
+    "name": "Mathematics",
+    "slug": "mathematics"
+  },
+  {
+    "name":"Other",
+    "slug": "other"
   }
 ]
 
