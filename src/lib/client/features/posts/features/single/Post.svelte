@@ -5,6 +5,7 @@
 	import Seo from '$lib/client/components/Seo.svelte';
 	import type { TPost } from '$lib/types/TPost';
 	import { OgTypes } from '$lib/client/types/OgTypes';
+	import Comments from '$lib/client/features/posts/features/single/components/Comments.svelte';
 
 	export let post: TPost;
 </script>
@@ -41,7 +42,7 @@
 				</div>
 			</MdStylesProvider>
 			<section class="mt-20">
-				<!--				<Comments />-->
+				<Comments />
 			</section>
 		</article>
 	</main>
