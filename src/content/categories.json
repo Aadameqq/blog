@@ -10,6 +10,9 @@
   {
     "name": "Mathematics",
     "slug": "mathematics"
+  },{
+    "name": "Design_Patterns",
+    "slug": "design-patterns"
   },
   {
     "name":"Other",
