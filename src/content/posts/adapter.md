@@ -8,7 +8,7 @@ description: This is a summary of the knowledge I acquired while learning about 
 
 ## Introduction
 
-Adapter is a design pattern that converts one interface into another. It's like an adapter that allows us to plug the European plug into US socket.
+The adapter design pattern converts implementations of one interface into implementations of another interface. It's like an adapter that allows us to plug the European plug into US socket.
 The adapter pattern is mainly used when we cannot change the plug or socket implementation.
 
 ![Diagram showing the structure of the adapter pattern](/images/posts/adapter/diagram.png)
