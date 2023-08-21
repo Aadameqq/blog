@@ -8,14 +8,14 @@ description: This is a summary of the knowledge I acquired while learning about 
 
 ## Introduction
 
-The adapter design pattern converts implementations of one interface into implementations of another interface. It's like an adapter that allows us to plug the European plug into US socket.
+Adapter is a design pattern that converts one interface into another. It's like an adapter that allows us to plug the European plug into US socket.
 The adapter pattern is mainly used when we cannot change the plug or socket implementation.
 
 ![Diagram showing the structure of the adapter pattern](/images/posts/adapter/diagram.png)
 
 ## Example
 
-Imagine that you have developed an application that uses a database library. After a few years, the library's author releases a new version with a new interface that is incompatible with the older versions. While you would like to use the updated version, you do not want to rewrite the existing code. Using the latest version only in new code seems like a great idea. But what if you would need to use existing class that uses the older interface? Adapter pattern solves this issue.
+Imagine that you have developed an application that uses a database library. After a few years, the library's author releases a new version with a new interface that is incompatible with the older versions. While you would like to use the updated version, you do not want to rewrite the existing code. Using the latest version only in new code seems like a great idea. But what if you would need to use existing class that uses the older interface in new code? Adapter pattern solves this issue.
 
 ### Code
 
