@@ -10,7 +10,7 @@ Adapter is a **design pattern** that **converts one interface into another**. It
 The adapter pattern is mainly used when we cannot change the plug or socket implementation.
 
 <img 
-src="/images/posts/adapter/diagram.png" 
+src="/blog/images/posts/adapter/diagram.png" 
 alt="Diagram showing the structure of the adapter pattern"
 style="max-width:800px"
 />
