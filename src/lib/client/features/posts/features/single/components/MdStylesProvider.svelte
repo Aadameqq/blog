@@ -58,7 +58,7 @@
 	}
 
 	.parent :global(img) {
-		@apply w-full rounded-md my-2;
+		@apply w-full rounded-md my-5;
 	}
 
 	.parent :global(figure img) {

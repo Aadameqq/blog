@@ -6,12 +6,17 @@ date: 20.08.2023
 description: This is a summary of the knowledge I acquired while learning about the Adapter pattern.
 ---
 
-## Introduction
-
 Adapter is a **design pattern** that **converts one interface into another**. It's like an adapter that allows us to plug the European plug into US socket.
 The adapter pattern is mainly used when we cannot change the plug or socket implementation.
 
-![Diagram showing the structure of the adapter pattern](/images/posts/adapter/diagram.png)
+<img 
+src="/images/posts/adapter/diagram.png" 
+alt="Diagram showing the structure of the adapter pattern"
+style="max-width:800px"
+/>
+Blue arrow - implements
+
+White arrow - uses
 
 ## Example
 
