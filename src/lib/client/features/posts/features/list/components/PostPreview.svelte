@@ -3,7 +3,7 @@
 	import { formatDate } from '$lib/client/features/posts/services/dateFormatter';
 	import { routes } from '$lib/client/config/routes';
 	import type { TPostPreview } from '$lib/types/TPostPreview';
-	import { TCategory } from '$lib/types/TCategory';
+	import type { TCategory } from '$lib/types/TCategory';
 
 	export let postPreview: TPostPreview;
 	export let currentCategory: TCategory | undefined;
