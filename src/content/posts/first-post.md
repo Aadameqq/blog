@@ -4,6 +4,7 @@ keywords: welcome
 categorySlug: other
 date: 01.08.2023
 description: First post
+isGloballyPinned: true
 ---
 
 ## First Post

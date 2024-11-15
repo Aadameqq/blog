@@ -19,13 +19,12 @@ export const filterPostsByCategory = (posts: TPost[], categorySlug: string) => {
 };
 
 export const movePinnedPosts = (posts: TPost[]) => {
-	return posts.sort((first, second) => {
-		if (second.isPinned) {
-			if (first.isPinned) {
-				return shouldSwap(first, second);
-			}
-			return SHOULD_SWAP;
-		}
-		return SHOULD_NOT_SWAP;
-	});
+	const pinned = posts.filter((post) => post.isCategoryPinned || post.isGloballyPinned);
+	const notPinned = posts.filter((post) => !post.isCategoryPinned && !post.isGloballyPinned);
+
+	return [...pinned, ...notPinned];
+};
+
+export const filterCategoryPinnedPosts = (posts: TPost[]) => {
+	return posts.filter((post) => !post.isCategoryPinned);
 };

@@ -4,5 +4,6 @@ export type RawPostMetadata = {
 	categorySlug: string;
 	date: string;
 	description: string;
-	isPinned: boolean;
+	isGloballyPinned: boolean;
+	isCategoryPinned: boolean;
 };

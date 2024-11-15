@@ -26,7 +26,8 @@ export const posts: TPost[] = Object.entries(postFilesByPath).map(([path, fileCo
 		...restRawMetadata,
 		category: categories.find((category) => category.slug === categorySlug) as TCategory,
 		slug,
-		isPinned: restRawMetadata.isPinned || false,
+		isCategoryPinned: restRawMetadata.isCategoryPinned || false,
+		isGloballyPinned: restRawMetadata.isGloballyPinned || false,
 		content: content
 	};
 

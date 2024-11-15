@@ -6,7 +6,6 @@
 	import type { TCategory } from '$lib/types/TCategory';
 
 	export let postPreview: TPostPreview;
-	export let currentCategory: TCategory | undefined;
 </script>
 
 <article class="border-t border-dashed border-gray-500 last:border-b group">
@@ -23,7 +22,7 @@
 			<div
 				class="flex flex-wrap laptop:flex-nowrap text-gray-400 mt-2 desktop:mt-0 whitespace-nowrap text-sm laptop:text-base justify-center items-center"
 			>
-				{#if postPreview.isPinned && currentCategory}
+				{#if postPreview.isPinned}
 					<span class="bi bi-pin-angle text-gray-300 mr-2 text-lg" aria-hidden="true" />
 					<p class="font-bold text-gray-300">Pinned</p>
 				{:else}

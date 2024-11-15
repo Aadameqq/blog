@@ -18,7 +18,8 @@ export const validatePostAndThrowErrors = (post: TPost, categories: TCategory[])
 		date: builder.string().regex(dateRegex),
 		description: builder.string(),
 		slug: builder.string().regex(/^(-|[a-z0-9])+$/),
-		isPinned: builder.boolean(),
+		isGloballyPinned: builder.boolean(),
+		isCategoryPinned: builder.boolean(),
 		content: builder.string()
 	});
 

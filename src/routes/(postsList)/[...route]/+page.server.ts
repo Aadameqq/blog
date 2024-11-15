@@ -2,7 +2,12 @@ import type { EntryGenerator, PageServerLoad } from './$types';
 import { categories } from '$lib/server/categories';
 import { posts } from '$lib/server/posts';
 import { getParamValueFromRouteIfExists } from '$lib/server/paramsUtils';
-import { filterPostsByCategory, movePinnedPosts, sortPostsFromNewest } from '$lib/server/refining';
+import {
+	filterCategoryPinnedPosts,
+	filterPostsByCategory,
+	movePinnedPosts,
+	sortPostsFromNewest
+} from '$lib/server/refining';
 import {
 	calculatePagesFromPostsCount,
 	formatPostsPage,
@@ -43,25 +48,27 @@ export const load: PageServerLoad = ({ params }) => {
 
 	if (categorySlugParam) {
 		filteredPosts = filterPostsByCategory(filteredPosts, categorySlugParam);
+	} else {
+		filteredPosts = filterCategoryPinnedPosts(filteredPosts);
 	}
 
 	const totalCount = filteredPosts.length;
 
 	filteredPosts = sortPostsFromNewest(filteredPosts);
 
-	if (categorySlugParam) {
-		filteredPosts = movePinnedPosts(filteredPosts);
-	}
+	filteredPosts = movePinnedPosts(filteredPosts);
 
 	filteredPosts = paginatePosts(filteredPosts, page);
 
-	const postPreviews = filteredPosts.map(({ title, category, date, slug, isPinned }) => ({
-		title,
-		category,
-		date,
-		slug,
-		isPinned
-	}));
+	const postPreviews = filteredPosts.map(
+		({ title, category, date, slug, isCategoryPinned, isGloballyPinned }) => ({
+			title,
+			category,
+			date,
+			slug,
+			isPinned: isCategoryPinned || isGloballyPinned
+		})
+	);
 
 	return {
 		postPreviews,

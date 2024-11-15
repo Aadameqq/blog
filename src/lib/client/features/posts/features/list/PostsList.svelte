@@ -29,7 +29,7 @@
 		<section class="mt-8">
 			<div>
 				{#each postPreviews as postPreview (postPreview.slug)}
-					<PostPreview {postPreview} {currentCategory} />
+					<PostPreview {postPreview} />
 				{/each}
 				{#if postPreviews.length === 0}
 					<div class="text-gray-200 text-lg text-center laptop:text-left">No posts</div>

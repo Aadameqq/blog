@@ -18,7 +18,9 @@ describe('validatePostAndThrowErrors', () => {
 		{ field: 'date', values: [undefined, '', 'abcd', '00.11.12'] },
 		{ field: 'description', values: [undefined, '', 1] },
 		{ field: 'slug', values: [undefined, '', 1, 'abc_', 'abcd.efgh'] },
-		{ field: 'content', values: [undefined, '', 1] }
+		{ field: 'content', values: [undefined, '', 1] },
+		{ field: 'isGloballyPinned', values: [undefined, '', 1, 0, 'test'] },
+		{ field: 'isCategoryPinned', values: [undefined, '', 1, 0, 'test'] }
 	])(
 		'When post parameter is provided and value of field $field is invalid Should throw an error',
 		({ field, values }) => {
@@ -52,7 +54,9 @@ describe('validatePostAndThrowErrors', () => {
 		{ field: 'date', values: ['01.01.2010', '11.11.2012'] },
 		{ field: 'description', values: ['ABC'] },
 		{ field: 'slug', values: [testSlug] },
-		{ field: 'content', values: ['abcdef'] }
+		{ field: 'content', values: ['abcdef'] },
+		{ field: 'isGloballyPinned', values: [true, false] },
+		{ field: 'isCategoryPinned', values: [true, false] }
 	])(
 		'When post parameter is provided and value of field $field is valid Should not throw an error',
 		({ field, values }) => {

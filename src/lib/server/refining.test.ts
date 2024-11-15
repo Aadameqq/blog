@@ -1,5 +1,10 @@
 import { describe, test } from 'vitest';
-import { filterPostsByCategory, sortPostsFromNewest } from '$lib/server/refining';
+import {
+	filterCategoryPinnedPosts,
+	filterPostsByCategory,
+	movePinnedPosts,
+	sortPostsFromNewest
+} from '$lib/server/refining';
 import type { TPost } from '$lib/types/TPost';
 
 describe('filterPostsByCategory', () => {
@@ -68,5 +73,98 @@ describe('sortPostsFromNewest', () => {
 		];
 
 		expect(sortPostsFromNewest(testPosts)).toEqual(expectedPosts);
+	});
+});
+
+describe('movePinnedPosts', () => {
+	const testPosts = [
+		{
+			date: '15.01.2022',
+			isCategoryPinned: true,
+			isGloballyPinned: false
+		},
+		{
+			date: '01.01.2022',
+			isGloballyPinned: true,
+			isCategoryPinned: false
+		},
+		{
+			date: '01.01.2023'
+		},
+		{
+			date: '01.01.2021'
+		},
+		{
+			date: '30.02.2022',
+			isGloballyPinned: true,
+			isCategoryPinned: false
+		}
+	] as unknown as TPost[];
+
+	test('When posts parameter is provided Should return posts with the pinned ones at the beginning', ({
+		expect
+	}) => {
+		const expectedPosts = [
+			{
+				date: '15.01.2022',
+				isCategoryPinned: true,
+				isGloballyPinned: false
+			},
+			{
+				date: '01.01.2022',
+				isGloballyPinned: true,
+				isCategoryPinned: false
+			},
+			{
+				date: '30.02.2022',
+				isGloballyPinned: true,
+				isCategoryPinned: false
+			},
+			{
+				date: '01.01.2023'
+			},
+			{
+				date: '01.01.2021'
+			}
+		];
+		console.log(movePinnedPosts(testPosts));
+
+		expect(movePinnedPosts(testPosts)).toEqual(expectedPosts);
+	});
+});
+
+describe('filterCategoryPinnedPosts', () => {
+	const testPosts = [
+		{
+			slug: '1',
+			isCategoryPinned: true
+		},
+		{
+			slug: '2',
+			isGloballyPinned: true
+		},
+		{
+			slug: '3',
+			isCategoryPinned: true
+		},
+		{
+			slug: '4'
+		}
+	] as unknown as TPost[];
+
+	test('When posts parameter is provided Should return posts that are not category pinned', ({
+		expect
+	}) => {
+		const expectedPosts = [
+			{
+				slug: '2',
+				isGloballyPinned: true
+			},
+			{
+				slug: '4'
+			}
+		];
+
+		expect(filterCategoryPinnedPosts(testPosts)).toEqual(expectedPosts);
 	});
 });
