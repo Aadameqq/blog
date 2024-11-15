@@ -2,7 +2,7 @@ import type { EntryGenerator, PageServerLoad } from './$types';
 import { categories } from '$lib/server/categories';
 import { posts } from '$lib/server/posts';
 import { getParamValueFromRouteIfExists } from '$lib/server/paramsUtils';
-import { filterPostsByCategory, sortPostsFromNewest } from '$lib/server/refining';
+import { filterPostsByCategory, movePinnedPosts, sortPostsFromNewest } from '$lib/server/refining';
 import {
 	calculatePagesFromPostsCount,
 	formatPostsPage,
@@ -48,13 +48,19 @@ export const load: PageServerLoad = ({ params }) => {
 	const totalCount = filteredPosts.length;
 
 	filteredPosts = sortPostsFromNewest(filteredPosts);
+
+	if (categorySlugParam) {
+		filteredPosts = movePinnedPosts(filteredPosts);
+	}
+
 	filteredPosts = paginatePosts(filteredPosts, page);
 
-	const postPreviews = filteredPosts.map(({ title, category, date, slug }) => ({
+	const postPreviews = filteredPosts.map(({ title, category, date, slug, isPinned }) => ({
 		title,
 		category,
 		date,
-		slug
+		slug,
+		isPinned
 	}));
 
 	return {

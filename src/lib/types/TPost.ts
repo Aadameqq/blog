@@ -8,5 +8,6 @@ export type TPost = {
 	date: string;
 	description: string;
 	slug: string;
+	isPinned: boolean;
 	content: string;
 };

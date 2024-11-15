@@ -3,8 +3,10 @@
 	import { formatDate } from '$lib/client/features/posts/services/dateFormatter';
 	import { routes } from '$lib/client/config/routes';
 	import type { TPostPreview } from '$lib/types/TPostPreview';
+	import { TCategory } from '$lib/types/TCategory';
 
 	export let postPreview: TPostPreview;
+	export let currentCategory: TCategory | undefined;
 </script>
 
 <article class="border-t border-dashed border-gray-500 last:border-b group">
@@ -17,10 +19,16 @@
 			>
 				{postPreview.title}
 			</h3>
+
 			<div
-				class="flex flex-wrap laptop:flex-nowrap text-gray-400 mt-2 desktop:mt-0 whitespace-nowrap text-sm laptop:text-base justify-center"
+				class="flex flex-wrap laptop:flex-nowrap text-gray-400 mt-2 desktop:mt-0 whitespace-nowrap text-sm laptop:text-base justify-center items-center"
 			>
-				<time datetime={postPreview.date}>{formatDate(postPreview.date)}</time>
+				{#if postPreview.isPinned && currentCategory}
+					<span class="bi bi-pin-angle text-gray-300 mr-2 text-lg" aria-hidden="true" />
+					<p class="font-bold text-gray-300">Pinned</p>
+				{:else}
+					<time datetime={postPreview.date}>{formatDate(postPreview.date)}</time>
+				{/if}
 				<span class="mx-2 text-gray-300">/</span>
 				<p>{postPreview.category.name}</p>
 			</div>

@@ -1,22 +1,26 @@
 [
   {
-    "name": "C_Sharp",
-    "slug": "c-sharp"
-  },
-  {
     "name": "Algorithms",
     "slug": "algorithms"
   },
   {
     "name": "Mathematics",
     "slug": "mathematics"
-  },{
+  },
+  {
     "name": "Design_Patterns",
     "slug": "design-patterns"
   },
   {
-    "name":"Other",
+    "name": "Other",
     "slug": "other"
+  },
+  {
+    "name": "Nestjs",
+    "slug": "nestjs"
+  },{
+    "name": "C# Learning",
+    "slug": "c-sharp-learning"
   }
 ]
 
