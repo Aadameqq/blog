@@ -10,5 +10,6 @@ export type TPost = {
 	slug: string;
 	isGloballyPinned: boolean;
 	isCategoryPinned: boolean;
+	isGloballyHidden: boolean;
 	content: string;
 };

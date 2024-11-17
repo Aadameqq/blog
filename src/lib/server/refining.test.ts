@@ -1,6 +1,7 @@
 import { describe, test } from 'vitest';
 import {
 	filterCategoryPinnedPosts,
+	filterGloballyHiddenPosts,
 	filterPostsByCategory,
 	movePinnedPosts,
 	sortPostsFromNewest
@@ -127,7 +128,6 @@ describe('movePinnedPosts', () => {
 				date: '01.01.2021'
 			}
 		];
-		console.log(movePinnedPosts(testPosts));
 
 		expect(movePinnedPosts(testPosts)).toEqual(expectedPosts);
 	});
@@ -166,5 +166,38 @@ describe('filterCategoryPinnedPosts', () => {
 		];
 
 		expect(filterCategoryPinnedPosts(testPosts)).toEqual(expectedPosts);
+	});
+});
+describe('filterGloballyHiddenPosts', () => {
+	const testPosts = [
+		{
+			slug: '1',
+			isGloballyHidden: true
+		},
+		{
+			slug: '2'
+		},
+		{
+			slug: '3',
+			isGloballyHidden: true
+		},
+		{
+			slug: '4'
+		}
+	] as unknown as TPost[];
+
+	test('When posts parameter is provided Should return posts that are not globally hidden', ({
+		expect
+	}) => {
+		const expectedPosts = [
+			{
+				slug: '2'
+			},
+			{
+				slug: '4'
+			}
+		];
+
+		expect(filterGloballyHiddenPosts(testPosts)).toEqual(expectedPosts);
 	});
 });

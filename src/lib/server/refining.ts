@@ -28,3 +28,7 @@ export const movePinnedPosts = (posts: TPost[]) => {
 export const filterCategoryPinnedPosts = (posts: TPost[]) => {
 	return posts.filter((post) => !post.isCategoryPinned);
 };
+
+export const filterGloballyHiddenPosts = (posts: TPost[]) => {
+	return posts.filter((post) => !post.isGloballyHidden);
+};

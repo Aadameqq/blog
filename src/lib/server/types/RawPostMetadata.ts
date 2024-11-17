@@ -6,4 +6,5 @@ export type RawPostMetadata = {
 	description: string;
 	isGloballyPinned: boolean;
 	isCategoryPinned: boolean;
+	isGloballyHidden: boolean;
 };

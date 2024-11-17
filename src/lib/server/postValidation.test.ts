@@ -20,6 +20,7 @@ describe('validatePostAndThrowErrors', () => {
 		{ field: 'slug', values: [undefined, '', 1, 'abc_', 'abcd.efgh'] },
 		{ field: 'content', values: [undefined, '', 1] },
 		{ field: 'isGloballyPinned', values: [undefined, '', 1, 0, 'test'] },
+		{ field: 'isGloballyHidden', values: [undefined, '', 1, 0, 'test'] },
 		{ field: 'isCategoryPinned', values: [undefined, '', 1, 0, 'test'] }
 	])(
 		'When post parameter is provided and value of field $field is invalid Should throw an error',
@@ -56,6 +57,7 @@ describe('validatePostAndThrowErrors', () => {
 		{ field: 'slug', values: [testSlug] },
 		{ field: 'content', values: ['abcdef'] },
 		{ field: 'isGloballyPinned', values: [true, false] },
+		{ field: 'isGloballyHidden', values: [true, false] },
 		{ field: 'isCategoryPinned', values: [true, false] }
 	])(
 		'When post parameter is provided and value of field $field is valid Should not throw an error',

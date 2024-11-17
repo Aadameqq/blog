@@ -4,6 +4,7 @@ import { posts } from '$lib/server/posts';
 import { getParamValueFromRouteIfExists } from '$lib/server/paramsUtils';
 import {
 	filterCategoryPinnedPosts,
+	filterGloballyHiddenPosts,
 	filterPostsByCategory,
 	movePinnedPosts,
 	sortPostsFromNewest
@@ -50,6 +51,7 @@ export const load: PageServerLoad = ({ params }) => {
 		filteredPosts = filterPostsByCategory(filteredPosts, categorySlugParam);
 	} else {
 		filteredPosts = filterCategoryPinnedPosts(filteredPosts);
+		filteredPosts = filterGloballyHiddenPosts(filteredPosts);
 	}
 
 	const totalCount = filteredPosts.length;

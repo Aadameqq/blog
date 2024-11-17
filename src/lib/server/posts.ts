@@ -28,6 +28,7 @@ export const posts: TPost[] = Object.entries(postFilesByPath).map(([path, fileCo
 		slug,
 		isCategoryPinned: restRawMetadata.isCategoryPinned || false,
 		isGloballyPinned: restRawMetadata.isGloballyPinned || false,
+		isGloballyHidden: restRawMetadata.isGloballyHidden || false,
 		content: content
 	};
 

@@ -20,6 +20,7 @@ export const validatePostAndThrowErrors = (post: TPost, categories: TCategory[])
 		slug: builder.string().regex(/^(-|[a-z0-9])+$/),
 		isGloballyPinned: builder.boolean(),
 		isCategoryPinned: builder.boolean(),
+		isGloballyHidden: builder.boolean(),
 		content: builder.string()
 	});
 
