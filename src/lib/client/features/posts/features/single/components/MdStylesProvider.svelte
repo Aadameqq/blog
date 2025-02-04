@@ -18,7 +18,7 @@
 	}
 
 	.parent :global(pre code) {
-		@apply bg-code [scrollbar-color:bg-scrollbar] [scrollbar-width:thin];
+		@apply font-code text-sm bg-code [scrollbar-color:bg-scrollbar] [scrollbar-width:thin];
 	}
 
 	.parent :global(pre code *) {

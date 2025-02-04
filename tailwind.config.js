@@ -8,13 +8,13 @@ export default {
 		},
 		fontFamily: {
 			numbers: ['Noto Sans', 'sans-serif'],
-			code: ['Fira Code', 'monospace']
+			code: ['JetBrains Mono', 'monospace']
 		},
 		extend: {
 			colors: {
 				bg: '#171717',
 				scrollbar: '#181818',
-				code: '#282b2e'
+				code: '#1d1d1e'
 			},
 			aria: {
 				current: 'current="page"'

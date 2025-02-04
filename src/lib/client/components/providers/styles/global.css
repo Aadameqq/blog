@@ -19,8 +19,8 @@
 }
 
 @font-face {
-	font-family: 'Fira Code';
-	src: url('/fonts/firaCode/FiraCode-Regular.ttf');
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/codeFont/JetBrainsMono-VariableFont_wght.ttf');
 }
 @font-face {
 	font-family: 'Space Mono';
