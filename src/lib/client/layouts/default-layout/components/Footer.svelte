@@ -15,8 +15,8 @@
 	<address
 		class="not-italic text-center laptop:text-right text-sm order-1 laptop:order-none basis-1/3"
 	>
-		<h6 class="header">Mail</h6>
-		<p class="content">testmail@testdomain</p>
+		<h6 class="header">Nie mam pomysłu</h6>
+		<p class="content">co tu umieścić, ale coś musi tu być</p>
 	</address>
 </footer>
 

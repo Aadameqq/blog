@@ -69,8 +69,8 @@ The adapter implements the interface that we want to convert our interface to. I
 
 Here you can see the usage of adapter.
 ```java
-    NewDatabase newDb = new NewDatabaseImpl();
-    OldDatabase adapted = new NewDatabaseToOldDatabaseAdapter(newDb);
-    UserRepository repositoryWithAdapted = new UserRepository(adapted);
+NewDatabase newDb = new NewDatabaseImpl();
+OldDatabase adapted = new NewDatabaseToOldDatabaseAdapter(newDb);
+UserRepository repositoryWithAdapted = new UserRepository(adapted);
 ```
 The entire working code can be found [here](https://github.com/Aadameqq/design-patterns-java/tree/master/src/main/java/adapter)

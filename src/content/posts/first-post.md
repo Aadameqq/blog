@@ -7,6 +7,4 @@ description: First post
 isGloballyPinned: true
 ---
 
-## First Post
-
 **Welcome** `to` *my* [blog](https://aadameqq.github.io/blog/)

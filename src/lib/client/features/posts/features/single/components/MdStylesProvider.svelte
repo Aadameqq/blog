@@ -2,7 +2,7 @@
 
 <style lang="postcss">
 	.parent :global(p) {
-		@apply text-gray-300 desktop:text-lg;
+		@apply text-zinc-300 text-sm laptop:text-base;
 	}
 
 	.parent :global(ol) {
@@ -14,7 +14,7 @@
 	}
 
 	.parent :global(pre) {
-		@apply my-3 p-2 laptop:px-4 rounded-md bg-code desktop:text-lg;
+		@apply my-3 p-2 laptop:px-4 rounded-md bg-code text-sm;
 	}
 
 	.parent :global(pre code) {
@@ -34,7 +34,7 @@
 	}
 
 	.parent :global(code:not(pre code)) {
-		@apply rounded-md p-1 font-code bg-code;
+		@apply rounded-md py-[2px] px-2 font-code bg-code;
 	}
 
 	.parent :global(h2) {
@@ -46,7 +46,7 @@
 	}
 
 	.parent :global(strong) {
-		@apply text-gray-100 underline decoration-wavy underline-offset-2 font-normal decoration-gray-300;
+		@apply text-gray-100 underline-offset-2 font-bold decoration-gray-300;
 	}
 
 	.parent :global(blockquote) {

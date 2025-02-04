@@ -21,18 +21,20 @@
 	<main>
 		<article>
 			<header>
-				<h1 class="text-gray-50 text-2xl laptop:text-3xl font-bold mb-3 desktop:text-4xl">
+				<h1 class="text-gray-50 text-3xl laptop:text-4xl font-bold mb-3 desktop:text-5xl">
 					{post.title}
 				</h1>
-				<div class="text-gray-400 mb-2">
-					<span class="bi bi-bookmark-fill text-gray-300" aria-hidden="true"><!-- --></span>
-					<span class="visually-hidden">Post's category: </span>
-					<span>{post.category.name}</span>
-				</div>
-				<div class="text-gray-400 mb-6">
-					<span class="bi bi-clock-fill text-gray-300" aria-hidden="true"><!-- --></span>
-					<span class="visually-hidden">Post created at: </span>
-					<time datetime={post.date}>{formatDate(post.date)}</time>
+				<div class="flex flex-col laptop:flex-row laptop:gap-6 text-sm laptop:text-base">
+					<div class="text-gray-400 mb-2">
+						<span class="bi bi-bookmark-fill text-gray-300" aria-hidden="true"><!-- --></span>
+						<span class="visually-hidden">Post's category: </span>
+						<span>{post.category.name}</span>
+					</div>
+					<div class="text-gray-400 mb-6">
+						<span class="bi bi-clock-fill text-gray-300" aria-hidden="true"><!-- --></span>
+						<span class="visually-hidden">Post created at: </span>
+						<time datetime={post.date}>{formatDate(post.date)}</time>
+					</div>
 				</div>
 			</header>
 
