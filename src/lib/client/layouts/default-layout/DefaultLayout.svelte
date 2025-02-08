@@ -8,7 +8,7 @@
 >
 	<div class="w-full flex flex-col items-center">
 		<Navbar />
-		<div class="ml-0 laptop:ml-10 mr-0 laptop:mr-10 w-full max-w-6xl mt-20 mb-20">
+		<div class="ml-0 laptop:px-10 mr-0 w-full max-w-6xl mt-20 mb-20">
 			<slot />
 		</div>
 	</div>
