@@ -1,5 +1,9 @@
 [
   {
+    "name": "Today_I_Learned",
+    "slug": "til"
+  },
+  {
     "name": "Algorithms",
     "slug": "algorithms"
   },
@@ -18,9 +22,6 @@
   {
     "name": "Nestjs",
     "slug": "nestjs"
-  },{
-    "name": "CSharp_Learning",
-    "slug": "c-sharp-learning"
   }
 ]
 
