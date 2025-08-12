@@ -36,3 +36,6 @@ puts result # zwróci true
 Modele nie przechowują pól - są one pobierane z bazy danych.
 Tak, że otwierając po raz pierwszy wygenerowany plik z modelem, można się zdziwić.
 Jeszcze nie jestem do tego w pełni przekonany, ale czas pokaże.
+
+## Linki
+1. Bardzo przystępny getting started guide na stronie RoR - [link](https://guides.rubyonrails.org/getting_started.html)
