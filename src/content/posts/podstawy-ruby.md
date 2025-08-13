@@ -1,5 +1,5 @@
 ---
-title: Nauka podstaw Ruby'ego - TIL #2
+title: Nauka podstaw Ruby'ego - TIL
 keywords: til, today i learned, ruby, ruby on rails, ror
 categorySlug: til
 date: 13.08.2025
