@@ -1,10 +1,11 @@
 import type { TPost } from '$lib/types/TPost';
+import { parseDate } from '$lib/server/parseDate';
 
 const SHOULD_SWAP = 1;
 const SHOULD_NOT_SWAP = -1;
 
 const shouldSwap = (first: TPost, second: TPost) => {
-	if (new Date(first.date) > new Date(second.date)) {
+	if (parseDate(first.date) > parseDate(second.date)) {
 		return SHOULD_NOT_SWAP;
 	}
 	return SHOULD_SWAP;
