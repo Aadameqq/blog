@@ -1,5 +1,5 @@
 ---
-title: Początek przygody z językiem ruby
+title: Początek przygody z językiem ruby - TIL #1
 keywords: til, today i learned, ruby, ruby on rails, ror
 categorySlug: til
 date: 12.08.2025
