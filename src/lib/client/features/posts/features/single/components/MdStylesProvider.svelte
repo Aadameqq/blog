@@ -6,11 +6,11 @@
 	}
 
 	.parent :global(ol) {
-		@apply text-gray-300 list-decimal list-inside my-2 desktop:text-lg;
+		@apply text-gray-300 list-decimal list-inside my-2 text-sm laptop:text-base;
 	}
 
 	.parent :global(ul) {
-		@apply text-gray-300 list-disc list-inside my-2 desktop:text-lg;
+		@apply text-gray-300 list-disc list-inside my-2 text-sm laptop:text-base;
 	}
 
 	.parent :global(pre) {
