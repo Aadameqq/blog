@@ -21,7 +21,7 @@
 	<main>
 		<article>
 			<header>
-				<h1 class="text-gray-50 text-3xl laptop:text-4xl font-bold mb-3 desktop:text-5xl">
+				<h1 class="text-gray-50 leading-[1.2] desktop:leading-[1.2] text-3xl laptop:text-4xl font-bold mb-3 desktop:text-5xl">
 					{post.title}
 				</h1>
 				<div class="flex flex-col laptop:flex-row laptop:gap-6 text-sm laptop:text-base">

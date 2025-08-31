@@ -5,6 +5,7 @@ categorySlug: til
 date: 17.08.2025
 description: Kolejny dzień nauki Ruby'ego - case, pattern matching
 ---
+Kolejny dzień nauki Ruby.
 ## Konstrukcja case
 ```ruby
 input = 'EIT'
