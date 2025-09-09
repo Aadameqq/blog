@@ -2,6 +2,7 @@ import Md from 'markdown-it';
 import type { HighlightResult } from 'highlight.js';
 import highlighter from 'highlight.js';
 import { base } from '$app/paths';
+import hljsRazor from '../external/razor-hljs.js';
 
 const surroundWithHighlightHtmlTag = (hljsResult: HighlightResult) => {
 	return `<pre><code class="hljs language-${hljsResult.language}">${hljsResult.value}</code></pre>`;
@@ -38,6 +39,7 @@ const imagesBasePathPlugin = (basePath: string) => (md: Md) => {
 const mdItInstance = Md({
 	html: true,
 	highlight: (code, language) => {
+		highlighter.registerLanguage('cshtml-razor', hljsRazor);
 		let codeAsHtml;
 		if (!language || !highlighter.getLanguage(language)) {
 			console.error(new Error('Unknown language in code block in post'));

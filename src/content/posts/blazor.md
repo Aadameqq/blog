@@ -62,7 +62,7 @@ Będzie on wyświetlać pojedyńcze zadanie z listy, które będzie przekazywane
 
 Następnie tworzę komponent `SingleItem` w folderze `Components`.
 W Blazor każdy komponent to klasa. By móc uzyskać dostęp do jej pól, korzystamy z `@`.
-```cshtml
+```cshtml-razor
 <div>@Item.Content</div>
 ```
 Mamy kilka szczególnych pól:
@@ -71,12 +71,12 @@ Mamy kilka szczególnych pól:
  - `@inject` pozwalające korzystać z IOCC
 
 Na początku importujemy model
-```cshtml
+```cshtml-razor
 @using Todo.Models
 ```
 Teraz chcemy przyjąć `item` jako parametr komponentu.
 Tworzymy więc blok `@code`, w którym tworzymy pole `Item` i oznaczamy je dekoratorem `[Parameter]`, który informuje, iż jest to parametr.
-```cshtml
+```cshtml-razor
 @using Todo.Models
 
 @code {
@@ -86,7 +86,7 @@ Tworzymy więc blok `@code`, w którym tworzymy pole `Item` i oznaczamy je dekor
 ```
 
 Skorzystam teraz z biblioteki Radzen.
-```cshtml
+```cshtml-razor
 @using Todo.Models
 
 <RadzenCard class="rz-my-3 rz-mx-auto">
@@ -107,7 +107,7 @@ Przypomina on zwykły komponent, ale jest kilka różnic.
 2. `<PageTitle>` ustawia `title` w sekcji `head`
 
 Dodaję do tego pliku komponent, w sposób podobny do React.
-```cshtml
+```cshtml-razor
 @page "/"
 @using Todo.Components @* Dodaje import *@
 
