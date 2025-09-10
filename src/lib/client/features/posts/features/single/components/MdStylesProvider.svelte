@@ -2,15 +2,15 @@
 
 <style lang="postcss">
 	.parent :global(p) {
-		@apply text-zinc-300 text-sm laptop:text-base;
+		@apply text-zinc-300 text-sm laptop:text-base my-3;
 	}
 
 	.parent :global(ol) {
-		@apply text-gray-300 list-decimal list-inside my-2 text-sm laptop:text-base;
+		@apply text-gray-300 list-decimal list-inside my-2 text-sm laptop:text-base pl-4;
 	}
 
 	.parent :global(ul) {
-		@apply text-gray-300 list-disc list-inside my-2 text-sm laptop:text-base;
+		@apply text-gray-300 list-disc list-inside my-2 text-sm laptop:text-base pl-4;
 	}
 
 	.parent :global(pre) {
@@ -34,7 +34,7 @@
 	}
 
 	.parent :global(code:not(pre code)) {
-		@apply rounded-md py-[2px] px-2 font-code bg-code;
+		@apply rounded-md py-[1px] px-2 font-code bg-code text-sm laptop:text-base;
 	}
 
 	.parent :global(h2) {

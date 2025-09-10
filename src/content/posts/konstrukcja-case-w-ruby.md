@@ -1,5 +1,5 @@
 ---
-title: Konstrukcja case i dekonstrukcja w Ruby - TIL
+title: Konstrukcja case i dekonstrukcja w Ruby
 keywords: til, today i learned, ruby, ruby on rails, ror
 categorySlug: til
 date: 17.08.2025

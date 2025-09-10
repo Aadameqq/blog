@@ -113,7 +113,7 @@ Dodaję do tego pliku komponent, w sposób podobny do React.
 
 <PageTitle>Home</PageTitle>
 
-<SingleItem Item=@(new ListItem(){Content = "test"}) />
+<TodoItem Item=@(new ListItem(){Content = "test"}) />
 ```
 Teraz w przeglądarce można zobaczyć to
 
@@ -122,9 +122,7 @@ src="/blog/images/posts/blazor/single-item.png"
 alt="Zdjęcie przedstawia wygląd wcześniej przygotowanego komponentu w przeglądarce"
 />
 
-Kolejna część pojawi się wkrótce.
-
-
+Część druga: [kliknij](http://aadameqq.github.io/blog/posts/blazor-2)
 
 ## Linki
 1. Dokumentacja Blazor - [link](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor)

@@ -1,5 +1,5 @@
 ---
-title: Początki z Ruby on Rails - TIL
+title: Początki z Ruby on Rails
 keywords: til, today i learned, ruby, ruby on rails, ror
 categorySlug: til
 date: 31.08.2025

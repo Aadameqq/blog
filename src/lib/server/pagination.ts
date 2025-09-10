@@ -1,7 +1,7 @@
 import type { TPost } from '$lib/types/TPost';
 
 const DEFAULT_PAGE = 1;
-const DEFAULT_PER_PAGE = 10;
+const DEFAULT_PER_PAGE = 8;
 export const paginatePosts = (posts: TPost[], page: number, perPage = DEFAULT_PER_PAGE) => {
 	return posts.slice((page - 1) * perPage, page * perPage);
 };
