@@ -157,7 +157,8 @@ Teraz użyjmy jej w `TodoItem`.
 I zobaczymy, że wszystko działa, jak powinno.
 Operację usuwania zadania implementuje się w podobny sposób, więc to pominę.
 
-W ostatniej części dodam local storage do zapisu zadań.
+Część ostatnia: [kliknij](http://aadameqq.github.io/blog/posts/blazor-3)
+
 ## Linki
 1. Dokumentacja Blazor - [link](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor)
 2. Biblioteka Radzen - [link](https://blazor.radzen.com/)
